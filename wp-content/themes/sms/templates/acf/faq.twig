@@ -1,0 +1,17 @@
+<section class="faq">
+    <div class="container">
+        <div class="row">
+           {% for question in fields.questions %}
+                <div class="question col-12">
+                    <div class="title">
+                        {{ question.title }}
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="answer">
+                        {{ question.answer }}
+                    </div>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+</section>

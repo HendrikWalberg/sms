@@ -1,0 +1,26 @@
+.faq {
+  padding: 70px 0;
+  font-family: 'Lato';
+}
+.faq .question {
+  padding-top: 3px;
+}
+.faq .question .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  width: 100%;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.faq .question .title p {
+  margin-bottom: 0;
+}
+.faq .question .answer {
+  display: none;
+  padding-top: 15px;
+}
+.faq .question .answer p {
+  margin-left: 10px;
+}

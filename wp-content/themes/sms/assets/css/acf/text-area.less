@@ -1,0 +1,49 @@
+.text-area {
+    position: relative;
+    width: 100%;
+	padding: 80px 0;
+    font-family: 'Lato';
+
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .image {
+            position: relative;
+            width: 100%;
+            padding-top: 80%;
+
+            img {
+                position: absolute;
+                left: 0; right: 0; top: 0; bottom: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            a {
+                color: currentColor;
+                cursor: pointer;
+            
+                &:hover {
+                    color: currentColor;
+                    text-decoration: none!;
+                }
+            }
+        }    
+    }
+}

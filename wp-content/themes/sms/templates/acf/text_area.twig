@@ -1,0 +1,24 @@
+<section 
+    class="text-area" style="
+        {{ fields.padding_override_top is not empty ? 'padding-top: ' ~ fields.padding_override_top ~ ';' : '' }}
+		{{ fields.padding_override_bottom is not empty ? 'padding-bottom: ' ~ fields.padding_override_bottom ~ ';' : '' }}
+    ">
+    <div class="container">
+        <div class="row {{ fields.order }}">
+            {% for column in fields.columns %}
+                <div class="column {{ column.size_x }}">
+                    {% if column.text is not empty %}
+                        <div class="text">
+                            {{ column.text }}
+                        </div>
+                    {% endif %}
+                    {% if column.image is not empty %}
+                        <div class="image">
+                            {{ fn('wp_get_attachment_image', column.image.id, 'fullsize') }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
