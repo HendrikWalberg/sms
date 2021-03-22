@@ -1,7 +1,7 @@
 .text-area {
     position: relative;
     width: 100%;
-	padding: 80px 0;
+	padding: 20px 0;
     font-family: 'Lato';
 
     .row-reverse {
@@ -11,13 +11,16 @@
     .column {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+        &.image-column {
+            justify-content: center;
+            align-items: center;
+        }
 
         .image {
             position: relative;
             width: 100%;
-            padding-top: 80%;
+            padding-top: 90%;
 
             img {
                 position: absolute;
@@ -28,13 +31,10 @@
             }
         }
 
-        .text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .text {   
             width: 100%;
-
+            font-weight: 300; 
+            
             a {
                 color: currentColor;
                 cursor: pointer;
@@ -42,6 +42,32 @@
                 &:hover {
                     color: currentColor;
                     text-decoration: none!;
+                }
+            }
+
+            hr {
+                width: 10%;
+                height: 5px;
+                background-color: var(--highlight-2);
+                margin-left: 0;
+                margin-top: 0;
+                margin-bottom: 12px;
+                border: none;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    font-size: 18px;
+
+                    &:before {
+                        content: '✓';
+                        color: var(--primary);
+                        font-size: 40px;
+                        margin-right: 10px;
+                    }
                 }
             }
         }    

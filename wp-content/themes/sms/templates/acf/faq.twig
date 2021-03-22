@@ -1,11 +1,14 @@
-<section class="faq">
+<section class="faq" style="
+        {{ fields.padding_override_top is not empty ? 'padding-top: ' ~ fields.padding_override_top ~ ';' : '' }}
+		{{ fields.padding_override_bottom is not empty ? 'padding-bottom: ' ~ fields.padding_override_bottom ~ ';' : '' }}
+    ">
     <div class="container">
         <div class="row">
            {% for question in fields.questions %}
                 <div class="question col-12">
                     <div class="title">
                         {{ question.title }}
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-angle-up fa-lg"></i>
                     </div>
                     <div class="answer">
                         {{ question.answer }}

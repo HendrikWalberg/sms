@@ -1,7 +1,46 @@
 :root {
   --primary: #808A9F;
-  --secondary: #F9F8F8;
+  --secondary: #ebe8e8;
   --highlight-1: #6BBF59;
-  --highlight-2: #48483A;
+  --highlight-2: #e9640c;
   --supplementary: #FFFFF3;
+}
+.background--white {
+  background-color: white;
+}
+.background--primary {
+  background-color: var(--primary);
+}
+.background--secondary {
+  background-color: var(--secondary);
+}
+.background--highlight-1 {
+  background-color: var(--highlight-1);
+}
+.background--highlight-2 {
+  background-color: var(--highlight-2);
+}
+.background--supplementary {
+  background-color: var(--supplementary);
+}
+.text--black {
+  color: black;
+}
+.text--white {
+  color: white;
+}
+.text--primary {
+  color: var(--primary);
+}
+.text--secondary {
+  color: var(--secondary);
+}
+.text--highlight-1 {
+  color: var(--highlight-1);
+}
+.text--highlight-2 {
+  color: var(--highlight-2);
+}
+.text--supplementary {
+  color: var(--supplementary);
 }

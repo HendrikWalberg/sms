@@ -1,0 +1,13 @@
+.site-footer {
+  position: relative;
+  padding: 40px 0;
+  background-color: var(--secondary);
+  height: 30vh;
+}
+.site-footer .footer-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}

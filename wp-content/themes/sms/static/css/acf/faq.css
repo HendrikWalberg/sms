@@ -3,7 +3,9 @@
   font-family: 'Lato';
 }
 .faq .question {
-  padding-top: 3px;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 900;
 }
 .faq .question .title {
   display: flex;
@@ -11,16 +13,23 @@
   align-items: center;
   padding: 10px 8px;
   width: 100%;
-  background-color: #f3f3f3;
+  color: black;
   cursor: pointer;
+}
+.faq .question .title:hover p,
+.faq .question .title:hover i {
+  color: var(--primary);
 }
 .faq .question .title p {
   margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 300!important;
 }
 .faq .question .answer {
   display: none;
   padding-top: 15px;
 }
 .faq .question .answer p {
-  margin-left: 10px;
+  margin-left: 25px;
+  font-weight: 400!important;
 }

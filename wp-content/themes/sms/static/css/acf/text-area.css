@@ -1,0 +1,66 @@
+.text-area {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  font-family: 'Lato';
+}
+.text-area .row-reverse {
+  flex-direction: row-reverse;
+}
+.text-area .column {
+  display: flex;
+  flex-direction: column;
+}
+.text-area .column.image-column {
+  justify-content: center;
+  align-items: center;
+}
+.text-area .column .image {
+  position: relative;
+  width: 100%;
+  padding-top: 90%;
+}
+.text-area .column .image img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.text-area .column .text {
+  width: 100%;
+  font-weight: 300;
+}
+.text-area .column .text a {
+  color: currentColor;
+  cursor: pointer;
+}
+.text-area .column .text a:hover {
+  color: currentColor;
+  text-decoration: none!;
+}
+.text-area .column .text hr {
+  width: 10%;
+  height: 5px;
+  background-color: var(--highlight-2);
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 12px;
+  border: none;
+}
+.text-area .column .text ul {
+  list-style: none;
+  padding-left: 0;
+}
+.text-area .column .text ul li {
+  font-size: 18px;
+}
+.text-area .column .text ul li:before {
+  content: '✓';
+  color: var(--primary);
+  font-size: 40px;
+  margin-right: 10px;
+}

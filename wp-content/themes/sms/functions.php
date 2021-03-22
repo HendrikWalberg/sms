@@ -65,8 +65,15 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_sidebars' ) );
 		parent::__construct();
 	}
+
+	public function register_sidebars()
+	{
+		require('lib/sidebars.php');
+	}
+
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
 
@@ -81,7 +88,10 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
+		$context['site_header_menu']  = new Timber\Menu('Site header menu');
+		$context['footer_menu_1'] = Timber::get_widgets('Footer Menu 1');
+		$context['footer_menu_2'] = Timber::get_widgets('Footer Menu 2');
+		$context['footer_menu_3'] = Timber::get_widgets('Footer Menu 3');
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();
@@ -181,7 +191,4 @@ function tbs_enqueue_scripts()
 
 	wp_enqueue_style('tbs-bootstrap-reboot', get_template_directory_uri() . '/static/lib/bootstrap/css/bootstrap-reboot.min.css');
 	wp_enqueue_style('tbs-bootstrap-grid', get_template_directory_uri() . '/static/lib/bootstrap/css/bootstrap-grid.min.css');
-
-	wp_enqueue_style('tbs-slick-theme', get_template_directory_uri() . '/static/lib/slick/slick/slick-theme.css');
-	wp_enqueue_script('tbs-slick', get_template_directory_uri() . '/static/lib/slick/slick/slick.min.js', ['jquery']);
 }

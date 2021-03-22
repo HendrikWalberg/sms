@@ -1,12 +1,18 @@
 <section 
-    class="text-area" style="
+    class="text-area {{ fields.background_color }} {{ fields.text_color }}" style="
         {{ fields.padding_override_top is not empty ? 'padding-top: ' ~ fields.padding_override_top ~ ';' : '' }}
 		{{ fields.padding_override_bottom is not empty ? 'padding-bottom: ' ~ fields.padding_override_bottom ~ ';' : '' }}
     ">
     <div class="container">
         <div class="row {{ fields.order }}">
             {% for column in fields.columns %}
-                <div class="column {{ column.size_x }}">
+
+                {% if column.image is not empty %}
+                    {% set image_column = "image-column" %}
+                {% endif %}
+                
+
+                <div class="column {{ image_column }} {{ column.size_x }}">
                     {% if column.text is not empty %}
                         <div class="text">
                             {{ column.text }}

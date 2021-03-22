@@ -1,7 +1,9 @@
 .hero {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
-    height: 50vh;
+    min-height: 40vh;
 
     img {
         position: absolute;
@@ -10,5 +12,12 @@
         width: 100%;
         object-fit: cover;
         overflow: hidden;   
+    }
+
+    .floating-box {
+        max-width: 60%;
+        z-index: 30;
+        padding: 10px;
+        background-color: white;
     }
 }

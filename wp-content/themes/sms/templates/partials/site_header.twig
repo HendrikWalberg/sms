@@ -1,0 +1,33 @@
+<header id="site-header">
+
+    <button id="site-header-toggle" class="d-lg-none">
+        <img class="inactive" src="{{ theme.link }}/static/img/transparent_hamburger.png">
+        <img class="active" src="{{ theme.link }}/static/img/plus.svg">
+    </button>
+
+    <nav class="nav-menu">
+        <ul class="nav-main">
+            {% for item in site_header_menu.items %}
+                <li class="nav-main-item {{ item.classes|join(' ') }}">
+                    {% if item.children %}
+                        <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
+
+                        <button class="toggle-nav-drop">
+                            <i class="fas fa-angle-down fa-lg"></i>
+                        </button>
+
+                        <ul class="nav-drop">
+                            {% for child in item.children %}
+                                <li class="nav-drop-item">
+                                    <a class="h6" href="{{ child.link }}">{{ child.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
