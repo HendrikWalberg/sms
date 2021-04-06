@@ -2,8 +2,26 @@
   padding: 40px 0;
   font-family: 'Lato';
 }
-.programs-area > .container {
-  max-width: 1200px!important;
+.programs-area .filter-area {
+  padding: 10px 0;
+}
+.programs-area .filter-area .warning {
+  padding: 10px 0;
+  text-align: center;
+}
+.programs-area .filter-area .filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.programs-area .filter-area .filter .filter-button i {
+  margin: 0 10px;
+}
+.programs-area .filter-area .filter .filter-choices {
+  display: flex;
+  padding: 20px;
 }
 .programs-area .programs {
   position: relative;
@@ -17,10 +35,14 @@
   display: none;
 }
 .programs-area .programs .program .fa-times {
-  color: yellow;
+  color: red;
+  width: 14px;
+  height: 14px;
 }
 .programs-area .programs .program .fa-check {
   color: green;
+  width: 14px;
+  height: 14px;
 }
 .programs-area .programs .program .program-upper {
   display: flex;
@@ -30,7 +52,7 @@
   border-bottom: 1px solid var(--secondary);
   min-height: 130px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .programs-area .programs .program .program-upper {
     padding-bottom: 20px!important;
   }
@@ -41,10 +63,11 @@
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .programs-area .programs .program .program-upper .feature {
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid var(--secondary);
   }
 }
 .programs-area .programs .program .program-upper .feature p {
@@ -52,7 +75,7 @@
   font-weight: 700;
   font-size: 30px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .programs-area .programs .program .program-upper .feature p {
     font-size: 18px;
   }
@@ -68,12 +91,23 @@
   margin-bottom: 0;
   font-size: 14px;
 }
+.programs-area .programs .program .program-upper .feature.extra p.token {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 .programs-area .programs .program .program-upper .image-container {
   position: relative;
   width: 10%;
   padding-top: 6%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
+  .programs-area .programs .program .program-upper .image-container {
+    padding-top: 20%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 992px) {
   .programs-area .programs .program .program-upper .image-container {
     padding-top: 20%;
     margin: 20px 0;
@@ -121,10 +155,23 @@
   justify-content: flex-end;
   align-items: center;
 }
+@media (max-width: 576px) {
+  .programs-area .programs .program .program-lower .program-features li .feature-name {
+    justify-content: center;
+    align-items: center;
+  }
+}
 .programs-area .programs .program .program-lower .program-features li .feature-value {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .programs-area .programs .program .program-lower .program-features li .feature-value {
+    justify-content: center;
+    align-items: center;
+  }
 }
 .programs-area .programs .program .program-lower .program-features li i {
   margin-right: 10px;
@@ -132,4 +179,5 @@
 .programs-area .programs .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }

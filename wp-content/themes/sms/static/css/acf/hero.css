@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: 100%;
+  min-width: 100%;
   min-height: 40vh;
 }
 .hero img {

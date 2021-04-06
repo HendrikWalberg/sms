@@ -254,6 +254,13 @@
   align-items: center;
   padding: 20px;
 }
+.programs-area .filter-area .filter .filter-choices .filter-choice {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.programs-area .filter-area .filter .filter-choices .filter-choice input {
+  margin-right: 5px;
+}
 .programs-area .programs {
   position: relative;
 }

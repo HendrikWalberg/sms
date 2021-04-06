@@ -214,7 +214,6 @@ function tbs_adtraction_update()
             default:
                 echo "Problem";     
         }
-       
         
         $query = $wpdb->prepare('
         INSERT INTO ' . $table_name . ' 
@@ -362,10 +361,8 @@ function tbs_adtraction_update()
     );
     
     $results = $wpdb->query($query);
-    var_dump($results);
     };
 }
-
 
 function tbs_return_all_programs()
 {
@@ -379,9 +376,7 @@ function tbs_return_all_programs()
 
     $programs = json_decode(json_encode($results), true);
 
-    $toReturn = array_slice($programs, 21, 41);
-
-    return $toReturn;
+    return $programs;
 }
 
 function tbs_return_one_program( $data )
@@ -407,5 +402,14 @@ function tbs_return_filtered_programs( $data )
 
     $table_name = $wpdb->prefix . 'tbsprograms';
 
-    return $data;
+    $utan_uc = $data['uc'];
+    $remark = $data['remark'];
+
+    $query = $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE ansok_utan_uc = %s AND acceptsRemarks = %s', $utan_uc, $remarks);
+
+    $results = $wpdb->get_results($query);
+
+    $programs = json_decode(json_encode($results), true);
+    
+    return $programs;
 }

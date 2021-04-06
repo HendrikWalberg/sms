@@ -18,11 +18,8 @@ function questionToggle()
 
 function getLenders()
 {
-	if( $('.programs-area').length)
-	{
-		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
-		console.log(data);
-		
+	function htmlTemplate(data) {
+
 		$.each(data, function(index, val) {
 
 			if(val.timeUnit === "Month")
@@ -43,18 +40,18 @@ function getLenders()
 				var acceptToken = `<i class="fas fa-times"></i>`;
 			};
 
-			if(val.ansok_utan_uc === true) {
+			if(val.ansok_utan_uc === "1") {
 				var remarkToken = `<i class="fas fa-check"></i>`;
 			};
 
-			if(val.ansok_utan_uc === false) {
+			if(val.ansok_utan_uc === "0") {
 				var remarkToken = `<i class="fas fa-times"></i>`;
 			};
 
 			if(index > 3) {
 				var programClass = "hide";
 			}
-
+			
 			if(val.maxInterest === val.minInterest) {
 				var interest = val.maxInterest
 			} else {
@@ -110,7 +107,7 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Ansök utan UC:</div> 
 								
 								<div class="feature-value col-sm-6 col-12">
-									${val.ansok_utan_uc === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${val.ansok_utan_uc === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
 								</div>
 							</li>
 
@@ -150,7 +147,7 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Ansök med bankId:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.ansok_med_bankid === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${val.ansok_med_bankid === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
 								</div>
 							</li>
 
@@ -158,7 +155,7 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Låneskydd kan tecknas:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.laneskydd_kan_tecknas === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${val.laneskydd_kan_tecknas === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
 								</div>
 							</li>
 							
@@ -166,39 +163,67 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Direkt utbetalning:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.direktutbetalning === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${val.direktutbetalning === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
 			`)})
-			$('.programs-area .programs').append(`<div class="button-container col-12"><button class="show-more primary-button"><span class="text">Visa Alla</span></button></div>`);
+			if($('.program').length > 3) {
+				$('.programs-area .programs').append(`<div class="button-container col-12"><button class="show-all primary-button"><span class="text">Visa Alla</span></button></div>`);
+			}
+		
+	};
+
+	function getAll() {
+		$('.programs-area .programs .program').remove();
+		$('.programs-area .programs .button-container').remove();
+		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
+			htmlTemplate(data);
 		});
 	}
 
-	$(document).on('click', '.more-information', function() {
+	if( $('.programs-area').length)
+	{
+		getAll();
+	}
+
+	$('.programs-area .filter-area .filter .reset-button').on('click', getAll);
+
+	$(document).on('click', '.programs-area .programs .more-information', function() {
 		$(this).next('.program-features').slideToggle(500);		
 		$(this).text(($(this).text() == 'Mer Information') ? 'Visa Mindre' : 'Mer Information');		
 	});
 
-	$(document).on('click', '.programs-area .programs .show-more', function() {
+	$(document).on('click', '.programs-area .programs .show-all', function() {
 		$('.hide').slideToggle('slow');
-        $('.show-more .text').text(($('.show-more .text').text() == 'Visa Alla') ? 'Visa Mindre' : 'Visa Alla');
+        $('.show-all .text').text(($('.show-all .text').text() == 'Visa Alla') ? 'Visa Mindre' : 'Visa Alla');
 	});
-}
 
-function filterPrograms() 
-{
-	if( $('.programs-area').length)
-	{
+	$(document).on('click', '.programs-area .filter-button', function() {
+		var uc;
+		var remark;
+
+		if($('.programs-area .filter #uc').is(':checked')) {
+			var uc = 1;
+		} else {
+			var uc = 0;
+		}
+
+		if($('.programs-area .filter #remark').is(':checked')) {
+			var remark = 1;
+		} else {
+			var remark = 0;
+		}
+
 		$.getJSON(`http://sms/wp-json/adtraction-fetch/v1/get-filter-programs?uc=${uc}&remark=${remark}`, function( data ) {
-		console.log(data);
-		
-		$.each(data, function(index, val) {});
+			$('.programs-area .programs .program').remove();
+			$('.programs-area .programs .button-container').remove();
 
-		})
-	}
+			htmlTemplate(data);
+		});
+	});
 }
 
 function indexList() 
