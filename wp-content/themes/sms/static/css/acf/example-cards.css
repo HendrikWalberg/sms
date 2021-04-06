@@ -1,0 +1,24 @@
+.example-cards {
+  padding: 40px 0;
+  font-family: 'Lato';
+}
+.example-cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.example-cards .card ul {
+  list-style: none;
+  padding-left: 0;
+}
+.example-cards .card ul li {
+  font-size: 18px;
+}
+.example-cards .card ul li:before {
+  content: '✓';
+  color: var(--primary);
+  font-size: 40px;
+  margin-right: 10px;
+}

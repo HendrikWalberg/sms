@@ -23,6 +23,9 @@
 .background--supplementary {
   background-color: var(--supplementary);
 }
+.background--blue {
+  background-color: #265aa9;
+}
 .text--black {
   color: black;
 }

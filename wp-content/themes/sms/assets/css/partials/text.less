@@ -37,3 +37,51 @@
 p {
     font-size: 18px;
 }
+
+.primary-button {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    outline: none !important;
+    border: none;
+    padding: 0;
+    border-radius: 2.625rem;
+    
+    &:hover {
+        color: white;
+        transition: all 0.2s 0s;
+        text-decoration: none;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-radius: 2.625rem;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        box-shadow: 5px 5px #29a64f;
+    }
+
+    .text {
+        position: relative;
+        border-radius: 2.625rem;
+        display: block;
+        padding: 10px 25px;
+        border: 2px solid currentColor;
+        z-index: 1;
+        border: none;
+        background-color: #00cf70;
+        transition: transform 0.25s;
+
+        &:hover {
+            transform: translate(2px, 2px);
+            color: black;
+        }
+    }   
+}

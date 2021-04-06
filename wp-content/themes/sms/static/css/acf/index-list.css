@@ -6,12 +6,18 @@
 .index-list .list {
   width: 100%;
 }
+.index-list .list ol {
+  padding-left: 0;
+}
+.index-list .list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 .index-list .list i {
   margin-right: 10px;
 }
 .index-list .list a {
   color: black;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 16px;
   padding: 5px 0;
 }

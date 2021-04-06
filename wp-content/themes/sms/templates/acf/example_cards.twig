@@ -1,0 +1,11 @@
+<section class="example-cards">
+    <div class="container">
+        <div class="row">
+            {% for card in fields.cards %}
+                <div class="card col-lg-4 col-sm-12">
+                    {{ card.text }}
+                </div>
+            {% endfor %}
+        </row>
+    </div>
+</section>

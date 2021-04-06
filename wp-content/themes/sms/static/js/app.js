@@ -4,6 +4,7 @@ $(document).ready(function() {
 	questionToggle()
 	indexList()
 	siteHeader()
+	getLenders()
 });
 
 function questionToggle()
@@ -17,9 +18,187 @@ function questionToggle()
 
 function getLenders()
 {
-	$.getJSON(`https://api.adtraction.com/v2/public/compare/paydayloans/`, function( data ) {
+	if( $('.programs-area').length)
+	{
+		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
 		console.log(data);
+		
+		$.each(data, function(index, val) {
+
+			if(val.timeUnit === "Month")
+			{
+				val.timeUnit = "månader";
+			}
+
+			if(val.timeUnit === "Year")
+			{
+				val.timeUnit = "år";
+			}
+
+			if(val.acceptsRemarks === "1") {
+				var acceptToken = `<i class="fas fa-check"></i>`;
+			};
+
+			if(val.acceptsRemarks === "0") {
+				var acceptToken = `<i class="fas fa-times"></i>`;
+			};
+
+			if(val.ansok_utan_uc === true) {
+				var remarkToken = `<i class="fas fa-check"></i>`;
+			};
+
+			if(val.ansok_utan_uc === false) {
+				var remarkToken = `<i class="fas fa-times"></i>`;
+			};
+
+			if(index > 3) {
+				var programClass = "hide";
+			}
+
+			if(val.maxInterest === val.minInterest) {
+				var interest = val.maxInterest
+			} else {
+				var interest = `${val.minInterest}-${val.maxInterest}`;
+			}
+
+			$('.programs-area .programs').append(`
+				<div class="program ${programClass === "hide" ? "hide" : ""} col-xl-12 col-lg-5 col-11 m-1">
+					<div class="program-upper row m-1">
+						<div class="image-container col-xl-2 col-10">
+							<img src=${val.logoUrl}>
+						</div>
+						
+						<div class="feature col-xl-3 col-lg-10">
+							<p class="subtitle">Lånebelopp</p>
+							<p>${val.minAmount} - ${val.maxAmount} kr</p>
+						</div>
+						
+						<div class="feature col-xl-2 col-lg-10">
+							<p class="subtitle">Ränta</p>
+							<p>${interest}%</p>
+						</div>
+						
+						<div class="feature col-xl-1 col-lg-10">
+							<p class="subtitle">Åldersgräns</p>
+							<p>${val.minAge}år</p>
+						</div>
+
+						<div class="feature extra col-xl-2 col-lg-10">
+							<div class="col-xl-11 col-lg-6 p-0">
+								<p>Bet.anmärk OK:</p>	
+								<p>Utan UC:</p>
+							</div>	
+							<div class="col-xl-1 col-lg-1 p-0">
+								<p class="token">${remarkToken}</p>
+								<p class="token">${acceptToken}</p>
+							</div>
+								
+						</div>
+						
+						<div class="col-xl-2 col-lg-10">
+							<div class="button-container col-12">
+								<a href=${val.programUrl} class="primary-button"><span class="text">Ansök nu</span></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="program-lower col-12">
+						<button class="more-information">Mer Information</button>
+
+						<ul class="program-features">
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Ansök utan UC:</div> 
+								
+								<div class="feature-value col-sm-6 col-12">
+									${val.ansok_utan_uc === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Uppläggningsavgift:</div>
+							
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.startFee} kr
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Bet.anmärk OK:</div>
+							
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.acceptsRemarks === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Lånetid:</div>
+								
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.minDuration} - ${val.maxDuration} ${val.timeUnit}
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Expiditions Avgift:</div>
+								
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.adminFee} kr
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Ansök med bankId:</div>
+								
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.ansok_med_bankid === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Låneskydd kan tecknas:</div>
+								
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.laneskydd_kan_tecknas === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+								</div>
+							</li>
+							
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Direkt utbetalning:</div>
+								
+								<div class="feature-value col-sm-6 col-12"> 
+									${val.direktutbetalning === true ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			`)})
+			$('.programs-area .programs').append(`<div class="button-container col-12"><button class="show-more primary-button"><span class="text">Visa Alla</span></button></div>`);
+		});
+	}
+
+	$(document).on('click', '.more-information', function() {
+		$(this).next('.program-features').slideToggle(500);		
+		$(this).text(($(this).text() == 'Mer Information') ? 'Visa Mindre' : 'Mer Information');		
 	});
+
+	$(document).on('click', '.programs-area .programs .show-more', function() {
+		$('.hide').slideToggle('slow');
+        $('.show-more .text').text(($('.show-more .text').text() == 'Visa Alla') ? 'Visa Mindre' : 'Visa Alla');
+	});
+}
+
+function filterPrograms() 
+{
+	if( $('.programs-area').length)
+	{
+		$.getJSON(`http://sms/wp-json/adtraction-fetch/v1/get-filter-programs?uc=${uc}&remark=${remark}`, function( data ) {
+		console.log(data);
+		
+		$.each(data, function(index, val) {});
+
+		})
+	}
 }
 
 function indexList() 
@@ -33,7 +212,7 @@ function indexList()
 
 	$.each(headings, function(index, val) {
 		$('.index-list .list').append(`
-			<a class="col-lg-5 col-sm-12 m-1" href="#${val}"><i class="fas fa-arrow-circle-right"></i>${index}</a>
+			<li class="col-lg-5 col-sm-12"><a href="#${val}">${index}</a></li>
 		`);
 	})
 }

@@ -1,0 +1,28 @@
+.example-cards {
+    padding: 40px 0;
+    font-family: 'Lato';
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                font-size: 18px;
+
+                &:before {
+                    content: '✓';
+                    color: var(--primary);
+                    font-size: 40px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
