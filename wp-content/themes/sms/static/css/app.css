@@ -200,7 +200,6 @@
   object-fit: contain;
 }
 .floating-box {
-  padding-bottom: 20px;
   background-color: white;
   max-height: 20%;
   font-family: 'Lato';
@@ -217,6 +216,9 @@
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   font-weight: 300;
 }
+.floating-box .text p {
+  font-size: 16px!important;
+}
 @media (max-width: 992px) {
   .floating-box .text {
     margin-top: -50%;
@@ -228,38 +230,53 @@
   }
 }
 .programs-area {
-  padding: 40px 0;
   font-family: 'Lato';
 }
 .programs-area .filter-area {
-  padding: 10px 0;
+  background-color: var(--secondary);
+  padding-bottom: 20px;
 }
-.programs-area .filter-area .warning {
-  padding: 10px 0;
+.programs-area .filter-area .warning .warning-title {
   text-align: center;
 }
-.programs-area .filter-area .filter {
+.programs-area .filter-area .warning .warning-text {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px 0;
 }
-.programs-area .filter-area .filter .filter-button i {
-  margin: 0 10px;
+.programs-area .filter-area .warning .warning-text .image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 4%;
 }
-.programs-area .filter-area .filter .filter-choices {
+.programs-area .filter-area .warning .warning-text .image-container img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.programs-area .filter-area .warning .warning-text .text p {
+  font-size: 14px;
+}
+.programs-area .filter-area .filter-module {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
-.programs-area .filter-area .filter .filter-choices .filter-choice {
+.programs-area .filter-area .filter-module button {
+  margin-bottom: 10px;
+}
+.programs-area .filter-area .filter-module button i {
   margin-right: 10px;
-  font-size: 20px;
 }
-.programs-area .filter-area .filter .filter-choices .filter-choice input {
-  margin-right: 5px;
+.programs-area .filter-area .filter-choice {
+  font-size: 18px;
+}
+.programs-area .filter-area .filter-choice input {
+  margin-right: 10px;
 }
 .programs-area .programs {
   position: relative;
@@ -428,19 +445,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  background-color: var(--primary);
+  color: white;
+}
+.example-cards .card p {
+  font-size: 16px!important;
 }
 .example-cards .card ul {
   list-style: none;
   padding-left: 0;
 }
 .example-cards .card ul li {
-  font-size: 18px;
+  font-size: 16px!important;
 }
 .example-cards .card ul li:before {
   content: '✓';
-  color: var(--primary);
-  font-size: 40px;
+  color: white;
+  font-size: 20px;
   margin-right: 10px;
 }
 /* ACF Styles END */

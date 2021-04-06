@@ -1,27 +1,53 @@
 .programs-area {
-  padding: 40px 0;
   font-family: 'Lato';
 }
 .programs-area .filter-area {
   padding: 10px 0;
+  background-color: var(--secondary);
 }
 .programs-area .filter-area .warning {
   padding: 10px 0;
+}
+.programs-area .filter-area .warning .warning-title {
   text-align: center;
 }
-.programs-area .filter-area .filter {
+.programs-area .filter-area .warning .warning-text {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px 0;
 }
-.programs-area .filter-area .filter .filter-button i {
-  margin: 0 10px;
+.programs-area .filter-area .warning .warning-text .image-container {
+  position: relative;
+  width: 10%;
+  padding-top: 15%;
 }
-.programs-area .filter-area .filter .filter-choices {
-  display: flex;
+.programs-area .filter-area .warning .warning-text .image-container img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.programs-area .filter-area .warning .warning-text .text {
   padding: 20px;
+}
+.programs-area .filter-area .filter-module {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.programs-area .filter-area .filter-module button {
+  margin-bottom: 10px;
+}
+.programs-area .filter-area .filter-module button i {
+  margin-right: 10px;
+}
+.programs-area .filter-area .filter-choice {
+  font-size: 18px;
+}
+.programs-area .filter-area .filter-choice input {
+  margin-right: 10px;
 }
 .programs-area .programs {
   position: relative;

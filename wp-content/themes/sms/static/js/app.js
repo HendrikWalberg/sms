@@ -189,7 +189,7 @@ function getLenders()
 		getAll();
 	}
 
-	$('.programs-area .filter-area .filter .reset-button').on('click', getAll);
+	$('.programs-area .filter-area .reset-button').on('click', getAll);
 
 	$(document).on('click', '.programs-area .programs .more-information', function() {
 		$(this).next('.program-features').slideToggle(500);		
@@ -201,17 +201,19 @@ function getLenders()
         $('.show-all .text').text(($('.show-all .text').text() == 'Visa Alla') ? 'Visa Mindre' : 'Visa Alla');
 	});
 
-	$(document).on('click', '.programs-area .filter-button', function() {
+	$(document).on('click', '.programs-area .filter-area .filter-button', function() {
 		var uc;
 		var remark;
 
-		if($('.programs-area .filter #uc').is(':checked')) {
+		console.log(uc, remark);
+
+		if($('.programs-area #uc').is(':checked')) {
 			var uc = 1;
 		} else {
 			var uc = 0;
 		}
 
-		if($('.programs-area .filter #remark').is(':checked')) {
+		if($('.programs-area #remark').is(':checked')) {
 			var remark = 1;
 		} else {
 			var remark = 0;
@@ -222,6 +224,7 @@ function getLenders()
 			$('.programs-area .programs .button-container').remove();
 
 			htmlTemplate(data);
+			console.log(data);
 		});
 	});
 }

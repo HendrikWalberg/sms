@@ -1,17 +1,28 @@
 <section class="programs-area">
     <div class="container">
-        <div class="filter-area row">
+        <div class="filter-area row justify-content-center">
             <div class="warning col-12">
-                <p>WARNING, LENDING MONEY IS RISKY OK?</p>
+                <p class="warning-title h4 col-12">Detta är högkostnadskrediter</p>
+                <div class="warning-text col-12">
+                    <div class="image-container col-1">
+                        <img src="{{ theme.link }}/static/img/Warning__icon.svg">
+                    </div>
+
+                    <div class="text col-10">
+                        <p>Du riskerar en betalningsanmärkning om du inte kan betala tillbaka hela skulden. Du kan vända dig till budget- och skuldrådgivaren i din kommun för stöd. Kontaktuppgifterna hittar du på <a href="http://www.hallakonsument.se">www.hallakonsument.se</a>.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="filter col-12">
-                <button class="primary-button filter-button"><span class="text"><i class="fas fa-cogs"></i>Filtera</span></button>
-                <button class="primary-button reset-button"><span class="text"><i class="fas fa-cogs"></i>Återställ</span></button>
+            <div class="row">
+                <div class="filter-module col-12">
+                    <button class="primary-button filter-button"><span class="text"><i class="fas fa-cogs"></i>Filtera</span></button>
+                    <button class="primary-button reset-button"><span class="text"><i class="fas fa-cogs"></i>Återställ</span></button>
+                </div>
 
-                <div class="filter-choices col-12">
-                    <div class="filter-choice" ><input id="uc" name="uc" type="checkbox">Utan UC</input></div>
-                    <div class="filter-choice"  ><input id="remark" name="remark" type="checkbox">Utan Betalningsanmärkning</input></div>
+                <div class="col-12">
+                    <div class="filter-choice"><input id="uc" name="uc" type="checkbox">Utan UC</input></div>
+                    <div class="filter-choice" ><input id="remark" name="remark" type="checkbox">Utan Betalningsanmärkning</input></div>
                 </div>
             </div>
         </div>

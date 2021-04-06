@@ -1,25 +1,31 @@
 .example-cards {
     padding: 40px 0;
     font-family: 'Lato';
-
+   
     .card {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+        background-color: var(--primary);
+        color: white;
 
+        p {
+            font-size: 16px!important;
+        }
+        
         ul {
             list-style: none;
             padding-left: 0;
 
             li {
-                font-size: 18px;
+                font-size: 16px!important;
 
                 &:before {
                     content: '✓';
-                    color: var(--primary);
-                    font-size: 40px;
+                    color: white;
+                    font-size: 20px;
                     margin-right: 10px;
                 }
             }
