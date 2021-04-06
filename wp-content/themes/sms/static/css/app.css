@@ -431,6 +431,13 @@
 .programs-area .programs .program .program-lower .program-features li i {
   margin-right: 10px;
 }
+.programs-area .programs .program .program-lower .program-features li .example {
+  font-size: 14px!important;
+}
+.programs-area .programs .program .program-lower .program-features li .warning {
+  font-size: 16px;
+  font-weight: 700;
+}
 .programs-area .programs .button-container {
   display: flex;
   justify-content: center;

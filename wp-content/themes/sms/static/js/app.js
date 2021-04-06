@@ -166,6 +166,20 @@ function getLenders()
 									${val.direktutbetalning === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
 								</div>
 							</li>
+
+							<li class="row justify-content-center">
+								<div class="feature-name col-sm-6 col-12">Exempel på lån:</div>
+									
+								<div class="feature-value col-sm-6 col-12"> 
+									<p class="example">${val.loanExample}</p>
+								</div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-12">
+									<p class="warning">Du riskerar en betalningsanmärkning om du inte kan betala tillbaka hela skulden. Du kan vända dig till budget- och skuldrådgivaren i din kommun för stöd. Kontaktuppgifterna hittar du på <a href="http://www.hallakonsument.se">www.hallakonsument.se</a>.</p>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
