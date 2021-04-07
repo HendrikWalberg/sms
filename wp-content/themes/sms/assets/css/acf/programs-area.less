@@ -2,19 +2,16 @@
     font-family: 'Lato';
 
     .filter-area {
-        background-color: var(--secondary);
         padding-bottom: 20px;
 
         .warning {
-
-            .warning-title {
-                text-align: center;
-            }
+            padding-top: 20px;
 
             .warning-text {
                 display: flex;
                 justify-content: center;
 
+            
                 .image-container {
                     position: relative;
                     width: 100%;
@@ -31,6 +28,12 @@
 
                 .text {
 
+                    .warning-title {
+                        margin-bottom: 0;
+                        font-weight: 700;
+                    }
+
+
                     p {
                         font-size: 14px;
                     }
@@ -38,13 +41,15 @@
             }
         }
 
-        .filter-module {
+        .filter-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
+            align-items: center;
             margin-bottom: 20px;
 
             button {
                 margin-bottom: 10px;
+                
 
                 i {
                     margin-right: 10px;
@@ -55,6 +60,7 @@
        
         .filter-choice {
             font-size: 18px;
+            margin-right: 20px;
 
             input {
                 margin-right: 10px;

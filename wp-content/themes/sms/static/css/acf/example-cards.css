@@ -7,18 +7,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  background-color: var(--primary);
+  color: white;
+}
+.example-cards .card p {
+  font-size: 16px!important;
 }
 .example-cards .card ul {
   list-style: none;
   padding-left: 0;
 }
 .example-cards .card ul li {
-  font-size: 18px;
+  font-size: 16px!important;
 }
 .example-cards .card ul li:before {
   content: '✓';
-  color: var(--primary);
-  font-size: 40px;
+  color: white;
+  font-size: 20px;
   margin-right: 10px;
 }
