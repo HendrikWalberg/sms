@@ -1,9 +1,62 @@
 <section class="floating-box">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="text col-12">
-                {{ fields.text }}
-            </div>
+        <div class="row {{ position }}">
+
+            {% if fields.text and fields.card is not empty %}
+                {% set position = "m-1" %}
+                <div class="floating-text col-lg-6 col-12">
+                    {{ fields.text }}
+                </div>
+
+                <div class="right col-lg-5 col-12">
+                    <div class="card">
+                        <div class="top-area">
+                            <i class="fas fa-medal fa-2x"></i>{{ fields.card.top_text }}
+                        </div>
+                        
+                        <div class="image-container">
+                            {{ fn('wp_get_attachment_image', fields.card.image.id, 'large') }}
+                        </div>
+
+                        <div class="text-container">
+                            {{ fields.card.text }}
+                        </div>
+                        
+                        <div class="button-container">
+                            <a class="primary-button" href="{{ fields.card.link }}"><span class="text"><i class="fas fa-external-link-alt"></i>Till Ansökan</span></a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if fields.text is not empty and fields.card is empty %}
+                {% set position = "justify-content-center" %}
+                <div class="floating-text col-12">
+                    {{ fields.text }}
+                </div>
+            {% endif %}
+            
+            {% if fields.text is empty and fields.card is not empty %}
+                {% set position = "justify-content-end" %}
+                <div class="card col-6">
+                    <div class="top-area">
+                        <i class="fas fa-medal"></i>{{ card.top_text }}
+                    </div>
+                    
+                    <div class="image-container">
+                        {{ fn('wp_get_attachment_image', fields.card.image, 'fullsize') }}
+                    </div>
+
+                    <div class="text-container">
+                        {{ card.text }}
+                    </div>
+
+                    <div class="button-container">
+                        <a class="link-button" href="{{ card.link }}"><i class="fas fa-external-link-alt">Till Ansökan</i></a>
+                    </div>
+                </div>
+            {% endif %}
+            
         </div>
     </div>
 </section>

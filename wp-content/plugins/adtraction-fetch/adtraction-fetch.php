@@ -13,7 +13,7 @@ function tbs_activation()
     $table_name = $wpdb->prefix . 'tbsprograms';
 
     $sql = "CREATE TABLE $table_name (
-        programName VARCHAR(255),
+        programName VARCHAR(255) UNIQUE,
         programId INT(9),
         programUrl VARCHAR(255),
         market VARCHAR(2),
@@ -35,12 +35,12 @@ function tbs_activation()
         firstLoanFree BOOLEAN,
         timeUnit VARCHAR(255),
         acceptsRemarks BOOLEAN,
-        loanExample VARCHAR(255),
+        loanExample TEXT,
         ansok_utan_uc BOOLEAN,
         ansok_med_bankid BOOLEAN, 
         laneskydd_kan_tecknas BOOLEAN,
         direktutbetalning BOOLEAN,
-        PRIMARY KEY (programName)
+        PRIMARY KEY (programId)
     );";
 
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

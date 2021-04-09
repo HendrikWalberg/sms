@@ -61,7 +61,7 @@ p {
   left: 0;
   box-shadow: 5px 5px #29a64f;
 }
-.primary-button .text {
+.primary-button > .text {
   position: relative;
   border-radius: 2.625rem;
   display: block;
@@ -72,7 +72,7 @@ p {
   background-color: #00cf70;
   transition: transform 0.25s;
 }
-.primary-button .text:hover {
+.primary-button > .text:hover {
   transform: translate(2px, 2px);
   color: black;
 }

@@ -2,11 +2,10 @@
   font-family: 'Lato';
 }
 .programs-area .filter-area {
-  background-color: var(--secondary);
   padding-bottom: 20px;
 }
-.programs-area .filter-area .warning .warning-title {
-  text-align: center;
+.programs-area .filter-area .warning {
+  padding-top: 20px;
 }
 .programs-area .filter-area .warning .warning-text {
   display: flex;
@@ -27,22 +26,28 @@
   width: 100%;
   object-fit: contain;
 }
+.programs-area .filter-area .warning .warning-text .text .warning-title {
+  margin-bottom: 0;
+  font-weight: 700;
+}
 .programs-area .filter-area .warning .warning-text .text p {
   font-size: 14px;
 }
-.programs-area .filter-area .filter-module {
+.programs-area .filter-area .filter-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 20px;
 }
-.programs-area .filter-area .filter-module button {
+.programs-area .filter-area .filter-buttons button {
   margin-bottom: 10px;
 }
-.programs-area .filter-area .filter-module button i {
+.programs-area .filter-area .filter-buttons button i {
   margin-right: 10px;
 }
 .programs-area .filter-area .filter-choice {
   font-size: 18px;
+  margin-right: 20px;
 }
 .programs-area .filter-area .filter-choice input {
   margin-right: 10px;

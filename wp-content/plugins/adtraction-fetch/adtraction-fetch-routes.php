@@ -25,8 +25,6 @@ add_action('rest_api_init', function() {
     ]);
 });
 
-
-
 /* CALLBACKS */
 
 /* UPDATES DATABASE WITH NEW DATA */
@@ -56,313 +54,17 @@ function tbs_adtraction_update()
     
     $table_name = $wpdb->prefix . 'tbsprograms';
 
-    $lenders = json_decode($response["body"]);
-
-    $programs = json_decode(json_encode($lenders), true);
+    $programs = json_decode($response["body"], true);
 
     foreach ($programs as $key => $program)
     {
-        switch ($program['programName'])
-        {
-            case "Brixo":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = true;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Cashbuddy SE":
-                $program["ansok_utan_uc"] = false;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-
-            case "Daypay":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Everydayplus SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Expresskredit":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Ferratum SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Flexkontot SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "GF Money SE":
-                $program["ansok_utan_uc"] = false;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Kontantfinans":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Kredit 365":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Kundfinans": 
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Loanstep": 
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Lumify": 
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Merax SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Mobillån SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-            
-            case "Monetti SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Northmill SE":
-                $program["ansok_utan_uc"] = false;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = true;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Slantar":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "SMSPengar": 
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            case "Tryggkredit": 
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = false;
-                $program["direktutbetalning"] = false;           
-                break;
-
-            case "ViaConto SE":
-                $program["ansok_utan_uc"] = true;
-                $program["ansok_med_bankid"] = true; 
-                $program["laneskydd_kan_tecknas"] = true;
-                $program["direktutbetalning"] = true;           
-                break;
-            
-            default:
-                echo "Problem";     
-        }
-        
-        $query = $wpdb->prepare('
-        INSERT INTO ' . $table_name . ' 
-            ( 
-                programName,
-                programId,
-                programUrl,
-                market,
-                currency,
-                logoUrl,
-                trackingUrl,
-                minAmount,
-                maxAmount,
-                minDuration,
-                maxDuration,
-                minInterest,
-                maxInterest,
-                minEffectiveInterest,
-                maxEffectiveInterest,
-                minAge,
-                minIncomeRequired,
-                adminFee,
-                startFee,
-                firstLoanFree,
-                timeUnit,
-                acceptsRemarks,
-                loanExample,
-                ansok_utan_uc,
-                ansok_med_bankid, 
-                laneskydd_kan_tecknas,
-                direktutbetalning 
-            )
-        VALUES
-            (
-                %s,
-                %d,
-                %s,
-                %s,
-                %s,
-                %s,
-                %s,
-                %f,
-                %f,
-                %f,
-                %f,
-                %f,
-                %f,
-                %f,
-                %f,
-                %d,
-                %f,
-                %f,
-                %f,
-                %d,
-                %s,
-                %d,
-                %s,
-                %d,
-                %d,
-                %d,
-                %d
-            )
-        ON DUPLICATE KEY UPDATE
-            programName = %s,
-            programId = %d,
-            programUrl = %s,
-            market = %s,
-            currency = %s,
-            logoUrl = %s,
-            trackingUrl = %s,
-            minAmount = %f,
-            maxAmount = %f,
-            minDuration = %f,
-            maxDuration = %f,
-            minInterest = %f,
-            maxInterest = %f,
-            minEffectiveInterest = %f,
-            maxEffectiveInterest = %f,
-            minAge = %d,
-            minIncomeRequired = %f,
-            adminFee = %f,
-            startFee = %f,
-            firstLoanFree = %d,
-            timeUnit = %s,
-            acceptsRemarks = %d,
-            loanExample = %s,
-            ansok_utan_uc = %d,
-            ansok_med_bankid = %d, 
-            laneskydd_kan_tecknas = %d,
-            direktutbetalning = %d;
-        ',  $program['programName'], 
-            $program['programId'], 
-            $program['programUrl'],
-            $program['market'],
-            $program['currency'],
-            $program['logoUrl'],
-            $program['trackingUrl'],
-            $program['minAmount'],
-            $program['maxAmount'],
-            $program['minDuration'],
-            $program['maxDuration'],
-            $program['minInterest'],
-            $program['maxInterest'],
-            $program['minEffectiveInterest'],
-            $program['maxEffectiveInterest'],
-            $program['minAge'],
-            $program['minIncomeRequired'],
-            $program['adminFee'],
-            $program['startFee'],
-            $program['firstLoanFree'],
-            $program['timeUnit'],
-            $program['acceptsRemarks'],
-            $program['loanExample'],
-            $program['ansok_utan_uc'],
-            $program['ansok_med_bankid'],
-            $program['laneskydd_kan_tecknas'],
-            $program['direktutbetalning'],
-            $program['programName'], 
-            $program['programId'], 
-            $program['programUrl'],
-            $program['market'],
-            $program['currency'],
-            $program['logoUrl'],
-            $program['trackingUrl'],
-            $program['minAmount'],
-            $program['maxAmount'],
-            $program['minDuration'],
-            $program['maxDuration'],
-            $program['minInterest'],
-            $program['maxInterest'],
-            $program['minEffectiveInterest'],
-            $program['maxEffectiveInterest'],
-            $program['minAge'],
-            $program['minIncomeRequired'],
-            $program['adminFee'],
-            $program['startFee'],
-            $program['firstLoanFree'],
-            $program['timeUnit'],
-            $program['acceptsRemarks'],
-            $program['loanExample'],
-            $program['ansok_utan_uc'],
-            $program['ansok_med_bankid'],
-            $program['laneskydd_kan_tecknas'],
-            $program['direktutbetalning']
-    );
-    
-    $results = $wpdb->query($query);
+        $final = tbs_include_unincluded_data($program);
+      
+        $experiment = $wpdb->replace($table_name, $final);
     };
 }
+
+/* RETURNS ALL DATA IN DATABASE */
 
 function tbs_return_all_programs()
 {
@@ -378,6 +80,8 @@ function tbs_return_all_programs()
 
     return $programs;
 }
+
+/* RETURNS ONE ROW OF DATABASE */
 
 function tbs_return_one_program( $data )
 {
@@ -396,6 +100,8 @@ function tbs_return_one_program( $data )
     return $program;
 }
 
+/* RETURN FILTERED DATA */
+
 function tbs_return_filtered_programs( $data )
 {
     global $wpdb;
@@ -412,4 +118,164 @@ function tbs_return_filtered_programs( $data )
     $programs = json_decode(json_encode($results), true);
     
     return $programs;
+}
+
+/* INSERT NOT INCLUDED DATA */
+
+function tbs_include_unincluded_data($program)
+{
+    switch ($program['programName'])
+    {
+        case "Brixo":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = true;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Cashbuddy SE":
+            $program["ansok_utan_uc"] = false;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+
+        case "Daypay":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Everydayplus SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Expresskredit":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Ferratum SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Flexkontot SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "GF Money SE":
+            $program["ansok_utan_uc"] = false;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Kontantfinans":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Kredit 365":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Kundfinans": 
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Loanstep": 
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Lumify": 
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Merax SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Mobillån SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+        
+        case "Monetti SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Northmill SE":
+            $program["ansok_utan_uc"] = false;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = true;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Slantar":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "SMSPengar": 
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        case "Tryggkredit": 
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = false;
+            $program["direktutbetalning"] = false;           
+            break;
+
+        case "ViaConto SE":
+            $program["ansok_utan_uc"] = true;
+            $program["ansok_med_bankid"] = true; 
+            $program["laneskydd_kan_tecknas"] = true;
+            $program["direktutbetalning"] = true;           
+            break;
+        
+        default:
+            echo "Problem with value injection loop";     
+    }
+    
+    return $program;
 }
