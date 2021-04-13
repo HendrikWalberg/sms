@@ -1,5 +1,16 @@
 .inner-outer-box {
-    padding: 20px 0;
+    padding: 40px 0;
+
+    &.background--highlight-2 {
+
+        h3 {
+            text-shadow: unset!important;
+        }
+
+        p {
+            text-shadow: unset!important;
+        }
+    }
 
     .inner-box {
         display: flex;
@@ -29,7 +40,6 @@
                 margin-bottom: 12px;
                 border: none;
             }
-
         }
 
         &.image-right {
@@ -51,7 +61,7 @@
             }
 
             @media(max-width: 992px) {
-                display: none;
+                padding-top: 80%;
             }
             
             img {

@@ -3,11 +3,8 @@
   font-family: 'Lato';
 }
 .example-cards .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  padding: 20px 20px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
   background-color: var(--primary);
   color: white;
 }

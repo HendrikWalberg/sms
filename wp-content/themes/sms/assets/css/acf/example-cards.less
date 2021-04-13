@@ -3,13 +3,10 @@
     font-family: 'Lato';
    
     .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
-        background-color: var(--primary);
-        color: white;
+        padding: 20px 20px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.20);
+        color: black;
+        margin: 10px!important;
 
         p {
             font-size: 16px!important;
@@ -20,11 +17,13 @@
             padding-left: 0;
 
             li {
+                display: flex;
+                align-items: center;
                 font-size: 16px!important;
 
                 &:before {
                     content: '✓';
-                    color: white;
+                    color: black;
                     font-size: 20px;
                     margin-right: 10px;
                 }

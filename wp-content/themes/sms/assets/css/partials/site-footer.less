@@ -1,18 +1,12 @@
 .site-footer {
     position: relative;
-    padding: 40px 0;
-    background-color: var(--secondary);
-    height: 50vh;
+    padding-top: 40px;
+    padding-bottom: 0;
+    background-color: #262626;
     font-family: 'Lato';
 
-    .footer-background {
-        position: absolute;
-        left: 0; right: 0; bottom: 0;
-        width: 100%;
-    }
-
     .widget-title {
-
+        color: white;
     }
 
     ul {
@@ -21,14 +15,46 @@
 
         li {
 
+            &:before {
+                content: "\f0da";
+                font-family: Font Awesome\ 5 Free Solid;
+                margin-right: 10px;
+                color: white;
+            }
+
             a {
                 font-size: 18px;
+                color: white;
                 
                 &:hover {
                     color: var(--primary);
                     text-decoration: none;
                 }
             }   
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        background-color: #3c3c3c;
+        
+        p {
+            margin-bottom: 0;
+            color: #9c9c9c;
+            font-size: 14px;
+        }
+
+        a {
+            color: #9c9c9c;
+
+            &:hover {
+                text-decoration: none;
+                color: #9c9c9c;
+            }
+        }
+
+        i {
+            margin: 0 10px;
         }
     }
 }

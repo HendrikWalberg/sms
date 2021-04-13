@@ -2,16 +2,17 @@
         {{ fields.padding_override_top is not empty ? 'padding-top: ' ~ fields.padding_override_top ~ ';' : '' }}
 		{{ fields.padding_override_bottom is not empty ? 'padding-bottom: ' ~ fields.padding_override_bottom ~ ';' : '' }}
     ">
-    <div class="container-fluid">
+
+    <div class="container">
         <div class="row inner-box {{ fields.image_position }} {{ fields.inner_background_color }} {{ fields.inner_text_color }}">
             {% if fields.text is not empty %}
-                <div class="text-container col-lg-4 col-sm-10 mr-5">
+                <div class="text-container {{ text_style }} col-lg-6 col-sm-12">
                     {{ fields.text }}
                 </div>
             {% endif %}
 
             {% if fields.image is not empty %}
-                <div class="image-container col-lg-4 col-sm-10 ml-5">
+                <div class="image-container col-lg-6 col-sm-12">
                     {{ fn('wp_get_attachment_image', fields.image.id, 'fullsize') }}
                 </div>
             {% endif %}            

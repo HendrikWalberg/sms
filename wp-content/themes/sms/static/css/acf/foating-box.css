@@ -11,7 +11,7 @@
 .floating-box .floating-text {
   background-color: white;
   margin-top: -20%;
-  padding-top: 40px;
+  padding-top: 15px;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   font-weight: 300;
 }
@@ -37,9 +37,13 @@
   }
 }
 .floating-box .right .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  height: 100%;
 }
 .floating-box .right .card .top-area {
   display: flex;

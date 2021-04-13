@@ -5,6 +5,7 @@ $(document).ready(function() {
 	indexList()
 	siteHeader()
 	getLenders()
+	smoothScroll()
 });
 
 function questionToggle()
@@ -94,7 +95,7 @@ function getLenders()
 						
 						<div class="col-xl-2 col-lg-10">
 							<div class="button-container col-12">
-								<a href=${val.programUrl} class="primary-button"><span class="text">Ansök nu</span></a>
+								<a rel="nofollow" target="_blank" href=${val.programUrl} class="primary-button"><span class="text">Ansök nu</span></a>
 							</div>
 						</div>
 					</div>
@@ -257,6 +258,23 @@ function indexList()
 			<li class="col-lg-5 col-sm-12"><a href="#${val}">${index}</a></li>
 		`);
 	})
+
+	var topOfElement = $('.index-list').offset().top + $('.index-list').outerHeight();
+
+	$(window).scroll(function() {
+		if($(window).scrollTop() > topOfElement) {
+			$('.index-list').addClass('fixed-top');
+			$('.index-list .list').addClass('fixed-top-child');
+		} 
+	})
+
+	if($('.index-list').hasClass('fixed-top')) {
+		$('.index-list .header').append(`<i class="fas fa-angle-down"></i>`);
+		$('.index-list .header').click(function() {
+			$(this).children('span i').toggleClass('fas fa-angle-down fa-lg');
+			$(this).children('span i').toggleClass('fas fa-angle-up fa-lg');
+		})
+	}	
 }
 
 function siteHeader() 
@@ -288,4 +306,16 @@ function siteHeader()
 		$('.nav-main').slideToggle(0);
 		$('.logo').toggleClass('active');
 	});
+}
+
+function smoothScroll() {
+	
+	$('a[href*="#"]').on('click', function (e) {
+		e.preventDefault()
+	  
+		$('html, body').animate(
+		  {
+			scrollTop: $($(this).attr('href')).offset().top-200,
+		  },1000)
+	  })
 }

@@ -1,6 +1,5 @@
 .text-area {
   position: relative;
-  width: 100%;
   padding: 20px 0;
   font-family: 'Lato';
 }
@@ -56,6 +55,8 @@
   padding-left: 0;
 }
 .text-area .column .text ul li {
+  display: flex;
+  align-items: center;
   font-size: 18px;
 }
 .text-area .column .text ul li:before {

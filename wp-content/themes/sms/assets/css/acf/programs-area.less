@@ -5,7 +5,7 @@
         padding-bottom: 20px;
 
         .warning {
-            padding-top: 20px;
+            margin: 40px;
 
             .warning-text {
                 display: flex;
@@ -41,31 +41,38 @@
             }
         }
 
-        .filter-buttons {
+        .filter-interface {
             display: flex;
             justify-content: space-evenly;
-            align-items: center;
-            margin-bottom: 20px;
 
             button {
-                margin-bottom: 10px;
-                
+                margin: 5px;
 
                 i {
-                    margin-right: 10px;
+                    margin-right: 5px;
                 }
             }
-        }
 
-       
-        .filter-choice {
-            font-size: 18px;
-            margin-right: 20px;
-
-            input {
-                margin-right: 10px;
+            @media(max-width: 576px) {
+                flex-direction: column;
+                align-items: center;
             }
-        }     
+
+            .filter-choises {
+                @media(max-width: 576px) {
+                    margin-top: 20px;
+                }
+
+                 .filter-choice {
+                    font-size: 18px;
+                    margin-right: 20px;
+
+                    input {
+                        margin-right: 10px;
+                    }
+                }     
+            }
+        }       
     }
 
     .programs {
@@ -183,7 +190,7 @@
                     font-size: 16px;
                     font-weight: 700;
                     background-color: inherit;
-                    color: #2aaef0;
+                    color: var(--primary);
                     outline: none;
                 }
 
@@ -244,6 +251,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 20px;
         }
     }
 }

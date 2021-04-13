@@ -5,7 +5,7 @@
   padding-bottom: 20px;
 }
 .programs-area .filter-area .warning {
-  padding-top: 20px;
+  margin: 40px;
 }
 .programs-area .filter-area .warning .warning-text {
   display: flex;
@@ -33,23 +33,29 @@
 .programs-area .filter-area .warning .warning-text .text p {
   font-size: 14px;
 }
-.programs-area .filter-area .filter-buttons {
+.programs-area .filter-area .filter-interface {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 20px;
 }
-.programs-area .filter-area .filter-buttons button {
-  margin-bottom: 10px;
+.programs-area .filter-area .filter-interface button {
+  margin: 5px;
 }
-.programs-area .filter-area .filter-buttons button i {
-  margin-right: 10px;
+@media (max-width: 576px) {
+  .programs-area .filter-area .filter-interface {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-.programs-area .filter-area .filter-choice {
+@media (max-width: 576px) {
+  .programs-area .filter-area .filter-interface .filter-choises {
+    margin-top: 20px;
+  }
+}
+.programs-area .filter-area .filter-interface .filter-choises .filter-choice {
   font-size: 18px;
   margin-right: 20px;
 }
-.programs-area .filter-area .filter-choice input {
+.programs-area .filter-area .filter-interface .filter-choises .filter-choice input {
   margin-right: 10px;
 }
 .programs-area .programs {
@@ -216,4 +222,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
