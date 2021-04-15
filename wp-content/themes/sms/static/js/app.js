@@ -271,10 +271,11 @@ function indexList()
 
 function siteHeader() 
 {
-	$('.nav-main-item').click(function() {
-        $('.nav-drop').slideToggle(500);
-		$('.nav-main-item .toggle-nav-drop i').toggleClass('fas fa-angle-down fa-lg');
-		$('.nav-main-item .toggle-nav-drop i').toggleClass('fas fa-angle-up fa-lg');
+	$('.nav-main-item').hover(function() {
+        $(this).children('.nav-drop').slideToggle(500);
+		$(this).find('.toggle-nav-drop i').toggleClass('fas fa-angle-down fa-lg');
+		$(this).find('.toggle-nav-drop i').toggleClass('fas fa-angle-up fa-lg');
+		$('#site-header').toggleClass('active');
     });
 
 	var $window = $(window);
