@@ -34,6 +34,7 @@
 .text-area .column {
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
 }
 .text-area .column.image-column {
   justify-content: center;
@@ -241,6 +242,14 @@
   padding-top: 15px;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   font-weight: 300;
+}
+.floating-box .floating-text hr {
+  width: 50%;
+  height: 5px;
+  background-color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  border: none;
 }
 .floating-box .floating-text .text-container {
   padding: 20px;
@@ -741,6 +750,7 @@ p {
 .site-footer .copyright {
   text-align: center;
   background-color: #3c3c3c;
+  padding: 5px 0;
 }
 .site-footer .copyright p {
   margin-bottom: 0;
@@ -763,7 +773,7 @@ p {
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 80px;
   top: 0;
   left: 0;
@@ -791,10 +801,16 @@ p {
   width: 100vw;
   max-width: 100%;
 }
+#site-header .nav-menu {
+  width: 100%;
+}
 #site-header .nav-menu .nav-main {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   list-style: none;
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
@@ -840,7 +856,7 @@ p {
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop {
   display: none;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--primary);
   top: 100%;
   list-style: none;
   min-width: 310px;

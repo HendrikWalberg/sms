@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row {{ position }}">
 
-            {% if fields.text and fields.card is not empty %}
+            {% if fields.text and fields.card.text is not empty %}
+                
                 {% set position = "m-1" %}
                 <div class="floating-text col-lg-6 col-12">
                     <div class="text-container">
@@ -29,16 +30,16 @@
                         </div>
                     </div>
                 </div>
-            {% endif %}
 
-            {% if fields.text is not empty and fields.card is empty %}
+            {% elseif fields.text is not empty and fields.card.text is empty %}
+                
                 {% set position = "justify-content-center" %}
                 <div class="floating-text col-12">
                     {{ fields.text }}
                 </div>
-            {% endif %}
-            
-            {% if fields.text is empty and fields.card is not empty %}
+
+            {% elseif fields.text is empty and fields.card.text is not empty %}
+
                 {% set position = "justify-content-end" %}
                 <div class="card col-6">
                     <div class="top-area">
@@ -57,6 +58,7 @@
                         <a class="link-button" href="{{ card.link }}"><i class="fas fa-external-link-alt">Till Ansökan</i></a>
                     </div>
                 </div>
+            
             {% endif %}
             
         </div>

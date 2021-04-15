@@ -1,25 +1,48 @@
 .site-footer {
   position: relative;
-  padding: 40px 0;
-  background-color: var(--secondary);
-  height: 50vh;
+  padding-top: 40px;
+  padding-bottom: 0;
+  background-color: #262626;
   font-family: 'Lato';
 }
-.site-footer .footer-background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+.site-footer .widget-title {
+  color: white;
 }
 .site-footer ul {
   list-style: none;
   padding-left: 0;
 }
+.site-footer ul li:before {
+  content: "\f0da";
+  font-family: Font Awesome\ 5 Free Solid;
+  margin-right: 10px;
+  color: white;
+}
 .site-footer ul li a {
   font-size: 18px;
+  color: white;
 }
 .site-footer ul li a:hover {
   color: var(--primary);
   text-decoration: none;
+}
+.site-footer .copyright {
+  text-align: center;
+  background-color: #3c3c3c;
+  padding: 5px 0;
+}
+.site-footer .copyright p {
+  margin-bottom: 0;
+  color: #9c9c9c;
+  font-size: 14px;
+}
+.site-footer .copyright a {
+  color: #9c9c9c;
+}
+.site-footer .copyright a:hover {
+  text-decoration: none;
+  color: #9c9c9c;
+}
+.site-footer .copyright i {
+  margin: 0 10px;
 }

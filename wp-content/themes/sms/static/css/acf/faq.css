@@ -5,7 +5,6 @@
 .faq .question {
   padding: 3px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-weight: 900;
 }
 .faq .question .title {
   display: flex;
@@ -22,8 +21,10 @@
 }
 .faq .question .title p {
   margin-bottom: 0;
+}
+.faq .question .title p span {
+  font-weight: 700!important;
   font-size: 18px;
-  font-weight: 300!important;
 }
 .faq .question .answer {
   display: none;
@@ -31,5 +32,5 @@
 }
 .faq .question .answer p {
   margin-left: 25px;
-  font-weight: 400!important;
+  font-weight: 200!important;
 }

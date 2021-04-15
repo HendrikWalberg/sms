@@ -15,23 +15,27 @@
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   font-weight: 300;
 }
-.floating-box .floating-text p {
+.floating-box .floating-text hr {
+  width: 50%;
+  height: 5px;
+  background-color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  border: none;
+}
+.floating-box .floating-text .text-container {
+  padding: 20px;
+}
+.floating-box .floating-text .text-container h1 {
+  margin-bottom: 20px!important;
+}
+.floating-box .floating-text .text-container p {
   font-size: 16px!important;
-}
-@media (max-width: 992px) {
-  .floating-box .floating-text {
-    margin-top: -50%;
-  }
-}
-@media (max-width: 576px) {
-  .floating-box .floating-text {
-    margin-top: -50%;
-  }
 }
 .floating-box .right {
   margin-top: -20%;
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .floating-box .right {
     margin-top: 10px;
   }
@@ -83,22 +87,11 @@
   object-fit: contain;
 }
 .floating-box .right .card .text-container {
-  padding: 10px 20px;
+  padding: 20px;
 }
-.floating-box .right .card .text-container ul {
-  list-style: none;
-  padding-left: 0;
-}
-.floating-box .right .card .text-container ul li {
-  font-size: 25px;
-  padding: 10px;
-  border-bottom: 1px solid var(--secondary);
-}
-.floating-box .right .card .text-container ul li:before {
-  content: '✓';
-  color: var(--primary);
-  font-size: 25px;
-  margin-right: 10px;
+.floating-box .right .card .text-container p {
+  font-size: 16px;
+  font-weight: 200;
 }
 .floating-box .right .card .button-container {
   display: flex;

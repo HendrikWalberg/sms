@@ -1,6 +1,6 @@
 .text-area {
   position: relative;
-  padding: 20px 0;
+  padding: 40px 0;
   font-family: 'Lato';
 }
 .text-area .row-reverse {
@@ -9,6 +9,7 @@
 .text-area .column {
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
 }
 .text-area .column.image-column {
   justify-content: center;
@@ -27,11 +28,15 @@
   bottom: 0;
   height: 100%;
   width: 100%;
+  margin: auto;
   object-fit: contain;
 }
 .text-area .column .text {
   width: 100%;
   font-weight: 300;
+}
+.text-area .column .text p {
+  margin-bottom: 0;
 }
 .text-area .column .text a {
   color: currentColor;

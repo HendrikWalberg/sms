@@ -4,7 +4,7 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 80px;
     top: 0; left: 0; right: 0;
     letter-spacing: 2px;
@@ -32,12 +32,16 @@
         max-width: 100%;
     }
 
-    .nav-menu {    
+    .nav-menu {
+        width: 100%;    
 
         .nav-main {
             display: flex;
+            justify-content: space-evenly;
+            align-items: center;  
             list-style: none;
             height: 100%;
+            width: 100%;  
             padding: 0;
             margin: 0;
 
@@ -84,7 +88,7 @@
                 .nav-drop {
                     display: none;
                     position: absolute;
-                    background-color: rgba(0, 0, 0, 0.8);
+                    background-color: var(--primary);
                     top: 100%;
                     list-style: none;
                     min-width: 310px;
@@ -106,8 +110,6 @@
             }
         }
     }
-
-    
 
     #site-header-toggle {
         position: relative;

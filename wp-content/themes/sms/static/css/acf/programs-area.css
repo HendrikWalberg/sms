@@ -40,6 +40,9 @@
 .programs-area .filter-area .filter-interface button {
   margin: 5px;
 }
+.programs-area .filter-area .filter-interface button i {
+  margin-right: 5px;
+}
 @media (max-width: 576px) {
   .programs-area .filter-area .filter-interface {
     flex-direction: column;
@@ -169,7 +172,7 @@
   font-size: 16px;
   font-weight: 700;
   background-color: inherit;
-  color: #2aaef0;
+  color: var(--primary);
   outline: none;
 }
 .programs-area .programs .program .program-lower .program-features {

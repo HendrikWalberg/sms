@@ -1,5 +1,6 @@
 #site-header {
-  background-color: rgba(128, 138, 159, 0.4);
+  background-color: var(--primary);
+  opacity: 0.4;
   position: fixed;
   display: flex;
   align-items: center;
@@ -16,14 +17,16 @@
   transition: all 1s;
 }
 #site-header.active {
-  background-color: rgba(128, 138, 159, 0.8);
+  background-color: var(--primary);
+  opacity: 0.8;
 }
 #site-header.expand {
   flex-direction: column;
   justify-content: center;
   align-items: unset;
   color: var(--secondary);
-  background-color: rgba(128, 138, 159, 0.8);
+  background-color: var(--primary);
+  opacity: 0.8;
   position: fixed;
   height: 100%;
   width: 100vw;
@@ -57,6 +60,7 @@
 #site-header .nav-menu .nav-main .nav-main-item a {
   color: currentColor;
   font-weight: 500;
+  opacity: 1!important;
 }
 #site-header .nav-menu .nav-main .nav-main-item a:hover {
   text-decoration: none;
@@ -77,7 +81,7 @@
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop {
   display: none;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--primary);
   top: 100%;
   list-style: none;
   min-width: 310px;

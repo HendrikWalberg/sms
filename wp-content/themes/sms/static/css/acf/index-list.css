@@ -5,16 +5,18 @@
 }
 .index-list .list {
   width: 100%;
+  flex-direction: column;
+  max-height: 50vh;
 }
-.index-list .list ol {
-  padding-left: 0;
+@media (max-width: 1200px) {
+  .index-list .list {
+    max-height: unset;
+    flex-direction: row;
+  }
 }
 .index-list .list li {
   padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.index-list .list i {
-  margin-right: 10px;
 }
 .index-list .list a {
   color: black;
@@ -22,6 +24,6 @@
   padding: 5px 0;
 }
 .index-list .list a:hover {
-  color: var(--highlight-2);
+  color: var(--primary);
   text-decoration: none;
 }
