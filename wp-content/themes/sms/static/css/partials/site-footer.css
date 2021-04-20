@@ -3,10 +3,8 @@
   padding-top: 40px;
   padding-bottom: 0;
   background-color: #262626;
-  font-family: 'Lato';
-}
-.site-footer .widget-title {
   color: white;
+  font-family: 'Lato';
 }
 .site-footer ul {
   list-style: none;
@@ -16,7 +14,6 @@
   content: "\f0da";
   font-family: Font Awesome\ 5 Free Solid;
   margin-right: 10px;
-  color: white;
 }
 .site-footer ul li a {
   font-size: 18px;

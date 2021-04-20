@@ -1,33 +1,60 @@
+<div id="fade-filter"></div>
+
+<header id="sub-header">
+    <div class="container">
+        <div class="row">
+            <p class="copyright col-10">Sms lån som beviljar alla - En jämförelsetjänst från TribuSoft AB &nbsp; | <i class="fas fa-phone"></i><a href="tel:076 869 50 60">076 869 50 60</a>&nbsp;<i class="fas fa-envelope-open-text"></i><a href="mailto:alexander@tribusoft.se">alexander@tribusoft.se</a></p>
+        </div>
+    </div>   
+</header>
+
 <header id="site-header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="logo col-lg-5 col-12">
+                <img src="{{ theme.link }}/static/img/logo.svg">
+                <a href="/" class="logo-text">Sms lån som beviljar alla</a>
+            </div>
 
-    <button id="site-header-toggle" class="d-lg-none">
-        <img class="inactive" src="{{ theme.link }}/static/img/transparent_hamburger.png">
-        <img class="active" src="{{ theme.link }}/static/img/plus.svg">
+            <nav class="nav-menu col-lg-6 col-12">
+
+                <div class="mobile-nav-logo col-lg-5 col-12">
+                    <img src="{{ theme.link }}/static/img/logo.svg">
+                    <p class="logo-text">Sms lån som beviljar alla</p>
+                </div>
+
+                <ul class="nav-main">
+                    {% for item in site_header_menu.items %}
+                        <li class="nav-main-item {{ item.classes|join(' ') }}">
+                            {% if item.children %}
+                                <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
+
+                                <i class="fas fa-angle-down fa-lg"></i>
+                                
+                                <ul class="nav-drop">
+                                    {% for child in item.children %}
+                                        <li class="nav-drop-item">
+                                            <a class="h6" href="{{ child.link }}">{{ child.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div id="mobile-menu-footer">
+                    <p class="title">Kontakta oss</p>
+                    <p class="footer-links"><i class="fas fa-phone"></i><a href="tel:076 869 50 60">076 869 50 60</a></p>
+                    <p class="footer-links"><i class="fas fa-envelope-open-text"></i><a href="mailto:alexander@tribusoft.se">alexander@tribusoft.se</a></p>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <button id="site-header-toggle"> 
+        <i class="fas fa-bars fa-2x"></i>
     </button>
-
-    <nav class="nav-menu">
-        <ul class="nav-main">
-            {% for item in site_header_menu.items %}
-                <li class="nav-main-item {{ item.classes|join(' ') }}">
-                    {% if item.children %}
-                        <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
-
-                        <button class="toggle-nav-drop">
-                            <i class="fas fa-angle-down fa-lg"></i>
-                        </button>
-
-                        <ul class="nav-drop">
-                            {% for child in item.children %}
-                                <li class="nav-drop-item">
-                                    <a class="h6" href="{{ child.link }}">{{ child.title }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
 </header>
