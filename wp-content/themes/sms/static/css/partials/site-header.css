@@ -57,7 +57,7 @@
   right: 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  z-index: 10;
+  z-index: 99;
   font-family: 'Lato';
   color: white;
 }
@@ -95,12 +95,14 @@
   top: 0;
   width: 50vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 99;
   background-color: white;
   padding: 0;
+  transition: right 0.3s;
 }
 #site-header .nav-menu.expand .mobile-nav-logo {
-  display: block;
+  display: flex;
+  align-items: center;
   background-color: #383f51;
   max-height: 60px;
 }
@@ -141,6 +143,17 @@
 #site-header .nav-menu #mobile-menu-footer .title {
   font-size: 20px;
   font-weight: 700;
+}
+#site-header .nav-menu #mobile-menu-footer .footer-links i {
+  margin-right: 10px;
+}
+#site-header .nav-menu #mobile-menu-footer .footer-links a {
+  color: white;
+}
+#site-header .nav-menu #mobile-menu-footer .footer-links:hover a,
+#site-header .nav-menu #mobile-menu-footer .footer-links:hover i {
+  color: #acd58f;
+  text-decoration: none;
 }
 #site-header .nav-menu .logo {
   display: none;
@@ -249,9 +262,13 @@
   #site-header-toggle {
     display: block;
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 5px;
     z-index: 9999;
+    border: none;
+    background-color: #383f51;
+    color: white;
+    outline: none;
   }
 }
 .logo {
@@ -287,4 +304,17 @@
 .logo img {
   height: 35px;
   margin-right: 10px;
+}
+#fade-filter {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color 0.3s;
+  z-index: 98;
+}
+#fade-filter.fade {
+  background-color: rgba(0, 0, 0, 0.5);
 }
