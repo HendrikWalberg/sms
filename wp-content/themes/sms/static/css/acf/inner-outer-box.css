@@ -31,6 +31,20 @@
   margin-bottom: 12px;
   border: none;
 }
+.inner-outer-box .inner-box .text-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+.inner-outer-box .inner-box .text-container ul li {
+  display: flex;
+  align-items: center;
+}
+.inner-outer-box .inner-box .text-container ul li:before {
+  content: '✓';
+  color: black;
+  font-size: 30px;
+  margin-right: 10px;
+}
 .inner-outer-box .inner-box.image-right {
   flex-direction: row;
 }

@@ -81,24 +81,25 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  right: 0;
   transition: right 0.3s;
 }
 @media (max-width: 992px) {
   #site-header .nav-menu {
     position: fixed;
-    right: -400px;
+    right: -500px;
+    flex-direction: column;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    z-index: 99;
+    background-color: white;
+    padding: 0;
+    transition: right 0.3s;
   }
 }
 #site-header .nav-menu.expand {
-  flex-direction: column;
   right: 0;
-  top: 0;
-  width: 50vw;
-  height: 100vh;
-  z-index: 99;
-  background-color: white;
-  padding: 0;
-  transition: right 0.3s;
 }
 #site-header .nav-menu.expand .mobile-nav-logo {
   display: flex;
@@ -316,5 +317,6 @@
   z-index: 98;
 }
 #fade-filter.fade {
+  display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }

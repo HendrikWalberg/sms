@@ -11,7 +11,7 @@ $(document).ready(function() {
 function questionToggle()
 {
 	$('.question .title').click(function() {
-		$(this).parent().children('.answer').slideToggle("slow");
+		$(this).parent().children('.answer').stop(true, false).slideToggle("slow");
 		$(this).children('.title i').toggleClass('fas fa-angle-down fa-lg');
 		$(this).children('.title i').toggleClass('fas fa-angle-up fa-lg');
 	});
@@ -41,12 +41,20 @@ function getLenders()
 				var acceptToken = `<i class="fas fa-times"></i>`;
 			};
 
+			if(val.acceptsRemarks === null) {
+				var acceptToken = `<i class="fas fa-question"></i>`;
+			};
+
 			if(val.ansok_utan_uc === "1") {
 				var remarkToken = `<i class="fas fa-check"></i>`;
 			};
 
 			if(val.ansok_utan_uc === "0") {
 				var remarkToken = `<i class="fas fa-times"></i>`;
+			};
+
+			if(val.ansok_utan_uc === null) {
+				var remarkToken = `<i class="fas fa-question"></i>`;
 			};
 
 			if(index > 3) {
@@ -58,6 +66,18 @@ function getLenders()
 			} else {
 				var interest = `${val.minInterest}-${val.maxInterest}`;
 			}
+
+			if(val.ansok_med_bankid === "1") {
+				var bankToken = `<i class="fas fa-check"></i>`;
+			};
+
+			if(val.ansok_med_bankid === "0") {
+				var bankToken = `<i class="fas fa-times"></i>`;
+			};
+
+			if(val.ansok_med_bankid === null) {
+				var bankToken = `<i class="fas fa-question"></i>`;
+			};
 
 			$('.programs-area .programs').append(`
 				<div class="program ${programClass === "hide" ? "hide" : ""} col-xl-12 col-lg-5 col-11 m-1">
@@ -148,7 +168,7 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Ansök med bankId:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.ansok_med_bankid === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${bankToken}
 								</div>
 							</li>
 
@@ -195,6 +215,7 @@ function getLenders()
 		$('.programs-area .programs .program').remove();
 		$('.programs-area .programs .button-container').remove();
 		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
+			console.log(data);
 			htmlTemplate(data);
 		});
 	}
@@ -272,9 +293,27 @@ function siteHeader()
 
 	$window.on('scroll', checkHeader);
 
+	$window.on('resize', resetMenu);
+
 	$window.on('scroll resize', checkHeader);
 
 	$window.trigger('scroll');
+
+	function resetMenu()
+	{
+		if($('#site-header').width() > 993 && $('.nav-menu').hasClass('expand')) {
+			$('.nav-menu').removeClass('expand');
+			$('.nav-main').css('display', 'flex');
+			$('#fade-filter').removeClass('fade');
+		}
+
+		if($('#site-header').width() < 991 && !$('.nav-menu').hasClass('expand')) {
+			$('.nav-menu').addClass('expand');
+			$('#mobile-menu-footer').css('display', 'block');
+			$('#fade-filter').addClass('fade');
+			$('.nav-main').css('display', 'block');
+		}
+	}
 
 	function checkHeader()
 	{
@@ -287,8 +326,8 @@ function siteHeader()
 
 	$('#site-header-toggle').click(function() {
 		$('.nav-menu').toggleClass('expand');
-		$('.nav-main').slideToggle(0);
-		$('#mobile-menu-footer').slideToggle(0);
+		$('.nav-main').css('display', 'block');
+		$('#mobile-menu-footer').css('display', 'block');
 		$(this).find('i').toggleClass('fas fa-bars fa-2x');
 		$(this).find('i').toggleClass('far fa-times-circle fa-2x');
 		$('#fade-filter').toggleClass('fade');
