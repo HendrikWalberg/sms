@@ -108,10 +108,7 @@ function tbs_return_filtered_programs( $data )
 
     $table_name = $wpdb->prefix . 'tbsprograms';
 
-    $utan_uc = $data['uc'];
-    $remark = $data['remark'];
-
-    $query = $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE ansok_utan_uc = %s AND acceptsRemarks = %s', $utan_uc, $remarks);
+    $query = $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE ansok_utan_uc = %s AND acceptsRemarks = %s', $data['uc'], $data['remark']);
 
     $results = $wpdb->get_results($query);
 

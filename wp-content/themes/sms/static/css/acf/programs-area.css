@@ -82,6 +82,11 @@
   width: 14px;
   height: 14px;
 }
+.programs-area .programs .program .fa-question {
+  color: orange;
+  width: 14px;
+  height: 14px;
+}
 .programs-area .programs .program .program-upper {
   display: flex;
   flex-direction: row;

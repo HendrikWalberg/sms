@@ -3,6 +3,9 @@
     font-family: 'Lato';
    
     .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         padding: 20px 20px;
         box-shadow: 0 0 10px 0 rgba(0,0,0,0.20);
         color: black;
@@ -10,19 +13,6 @@
 
         p {
             font-size: 16px!important;
-        }
-
-        a {
-            &:before {
-                content: "\f0da";
-                font-family: Font Awesome\ 5 Free Solid;
-                margin-right: 10px;
-                font-size: 20px;
-            }
-
-            &:hover {
-                text-decoration: none;
-            }
         }
         
         ul {

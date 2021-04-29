@@ -11,6 +11,15 @@
 .example-cards .card p {
   font-size: 16px!important;
 }
+.example-cards .card a:before {
+  content: "\f0da";
+  font-family: Font Awesome\ 5 Free Solid;
+  margin-right: 10px;
+  font-size: 20px;
+}
+.example-cards .card a:hover {
+  text-decoration: none;
+}
 .example-cards .card ul {
   list-style: none;
   padding-left: 0;

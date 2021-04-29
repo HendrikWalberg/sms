@@ -68,11 +68,11 @@ function getLenders()
 			}
 
 			if(val.ansok_med_bankid === "1") {
-				var bankToken = `<i class="fas fa-check"></i>`;
+				var bankToken = `<i class="fas fa-check"></i> Ja`;
 			};
 
 			if(val.ansok_med_bankid === "0") {
-				var bankToken = `<i class="fas fa-times"></i>`;
+				var bankToken = `<i class="fas fa-times"></i> Nej`;
 			};
 
 			if(val.ansok_med_bankid === null) {
@@ -121,7 +121,7 @@ function getLenders()
 					</div>
 					
 					<div class="program-lower col-12">
-						<button class="more-information">Mer Information</button>
+						<button class="more-information">Mer Information <i class="fas fa-angle-down fa-lg"></i></button>
 
 						<ul class="program-features">
 							<li class="row justify-content-center">
@@ -144,7 +144,7 @@ function getLenders()
 								<div class="feature-name col-sm-6 col-12">Bet.anmärk OK:</div>
 							
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.acceptsRemarks === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${remarkToken}
 								</div>
 							</li>
 
@@ -215,7 +215,6 @@ function getLenders()
 		$('.programs-area .programs .program').remove();
 		$('.programs-area .programs .button-container').remove();
 		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
-			console.log(data);
 			htmlTemplate(data);
 		});
 	}
@@ -229,7 +228,7 @@ function getLenders()
 
 	$(document).on('click', '.programs-area .programs .more-information', function() {
 		$(this).next('.program-features').slideToggle(500);		
-		$(this).text(($(this).text() == 'Mer Information') ? 'Visa Mindre' : 'Mer Information');		
+		$(this).html(($(this).html() == 'Mer Information <i class="fas fa-angle-down fa-lg"></i>') ? 'Visa Mindre <i class="fas fa-angle-up fa-lg"></i>' : 'Mer Information <i class="fas fa-angle-down fa-lg"></i>');		
 	});
 
 	$(document).on('click', '.programs-area .programs .show-all', function() {
@@ -239,17 +238,15 @@ function getLenders()
 
 	$(document).on('click', '.programs-area .filter-area .filter-button', function() {
 		var uc;
-		var remark;
+		var remark;	
 
-		console.log(uc, remark);
-
-		if($('.programs-area #uc').is(':checked')) {
+		if($('#uc').is(':checked')) {
 			var uc = 1;
 		} else {
 			var uc = 0;
 		}
 
-		if($('.programs-area #remark').is(':checked')) {
+		if($('#remark').is(':checked')) {
 			var remark = 1;
 		} else {
 			var remark = 0;
@@ -260,7 +257,6 @@ function getLenders()
 			$('.programs-area .programs .button-container').remove();
 
 			htmlTemplate(data);
-			console.log(data);
 		});
 	});
 }
@@ -293,27 +289,9 @@ function siteHeader()
 
 	$window.on('scroll', checkHeader);
 
-	$window.on('resize', resetMenu);
-
 	$window.on('scroll resize', checkHeader);
 
 	$window.trigger('scroll');
-
-	function resetMenu()
-	{
-		if($('#site-header').width() > 993 && $('.nav-menu').hasClass('expand')) {
-			$('.nav-menu').removeClass('expand');
-			$('.nav-main').css('display', 'flex');
-			$('#fade-filter').removeClass('fade');
-		}
-
-		if($('#site-header').width() < 991 && !$('.nav-menu').hasClass('expand')) {
-			$('.nav-menu').addClass('expand');
-			$('#mobile-menu-footer').css('display', 'block');
-			$('#fade-filter').addClass('fade');
-			$('.nav-main').css('display', 'block');
-		}
-	}
 
 	function checkHeader()
 	{
@@ -326,8 +304,6 @@ function siteHeader()
 
 	$('#site-header-toggle').click(function() {
 		$('.nav-menu').toggleClass('expand');
-		$('.nav-main').css('display', 'block');
-		$('#mobile-menu-footer').css('display', 'block');
 		$(this).find('i').toggleClass('fas fa-bars fa-2x');
 		$(this).find('i').toggleClass('far fa-times-circle fa-2x');
 		$('#fade-filter').toggleClass('fade');
@@ -344,5 +320,5 @@ function smoothScroll() {
 		  {
 			scrollTop: $($(this).attr('href')).offset().top-200,
 		  },1000)
-	  })
+	})
 }
