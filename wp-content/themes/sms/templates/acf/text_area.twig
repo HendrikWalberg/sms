@@ -11,7 +11,7 @@
                     {% set image_column = "image-column" %}
                 {% endif %}                
 
-                <div class="column {{ image_column }} {{ column.size_x }}">
+                <div class="column {{ image_column }} {{ column.size_x }} {{ column.divider_color }}">
                     {% if column.text is not empty %}
                         <div class="text">
                             {{ column.text }}

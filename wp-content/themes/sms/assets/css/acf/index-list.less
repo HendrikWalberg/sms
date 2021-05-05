@@ -1,10 +1,79 @@
 .index-list {
-    padding: 40px 0;
-    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-family: 'Lato';
+    max-height: 95vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    .list {
+    .header {
+        
+        @media(max-width: 992px) {
+            cursor: pointer;
+            justify-content: center;
+        }
+
+        .title {
+            @media(max-width: 992px) {
+                display: none;
+            }
+        }
+
+        .mobile-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media(min-width: 993px) {
+                display: none;
+            }
+
+            i {
+                color: var(--primary);
+                margin-left: 10px;
+    
+                @media(min-width: 992px) {
+                    display: none;
+                }
+            }
+        }
+
+        p {
+            font-size: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-family: 'Lato';
+            font-weight: 900;
+            line-height: 40px;
+
+            @media(max-width: 992px) {
+                font-size: 18px;
+                color: var(--primary);
+                margin-bottom: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        position: sticky;
+        top: 50px;
+        z-index: 99;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: var(--secondary);
+    }
+
+    #list {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+              
+        @media(max-width: 992px) {
+            display: none;
+            background-color: var(--secondary);
+        }
         
         li {
             padding-top: 10px;

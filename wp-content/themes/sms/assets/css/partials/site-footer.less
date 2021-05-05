@@ -31,29 +31,44 @@
         }
     }
 
+    .widget-title {
+        margin-bottom: 5px;
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
     .copyright {
         text-align: center;
         background-color: #3c3c3c;
-        padding: 5px 0;
+        padding-top: 10px;
+        padding-bottom: 5px;
         margin-top: 40px;
-        
+
         p {
             margin-bottom: 0;
             color: #9c9c9c;
-            font-size: 14px;
-        }
+            font-size: 14px!important;
 
-        a {
-            color: #9c9c9c;
-
-            &:hover {
-                text-decoration: none;
-                color: #9c9c9c;
+            span {
+                display: inline-block;
             }
-        }
+            
+            i {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            a {
+                color: #9c9c9c;
+                margin-left: 10px;
+                display: inline-block;
 
-        i {
-            margin: 0 10px;
-        }
+                &:hover {
+                    text-decoration: none;
+                    color: #9c9c9c;
+                }
+            }
+        }   
     }
 }

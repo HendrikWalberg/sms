@@ -1,10 +1,9 @@
 <section class="floating-box">
     <div class="container">
-        <div class="row {{ position }}">
+        <div class="row justify-content-center">
 
             {% if fields.text and fields.card.text is not empty %}
                 
-                {% set position = "m-1" %}
                 <div class="floating-text col-lg-6 col-12">
                     <div class="text-container">
                         {{ fields.text }}
@@ -33,14 +32,12 @@
 
             {% elseif fields.text is not empty and fields.card.text is empty %}
                 
-                {% set position = "justify-content-center" %}
                 <div class="floating-text col-12">
                     {{ fields.text }}
                 </div>
 
             {% elseif fields.text is empty and fields.card.text is not empty %}
 
-                {% set position = "justify-content-end" %}
                 <div class="card col-6">
                     <div class="top-area">
                         <i class="fas fa-medal"></i>{{ card.top_text }}

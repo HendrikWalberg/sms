@@ -1,22 +1,80 @@
 .index-list {
-  padding: 40px 0;
-  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
   font-family: 'Lato';
+  max-height: 95vh;
 }
-.index-list .list {
+.index-list .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .index-list .header {
+    cursor: pointer;
+    justify-content: center;
+  }
+}
+.index-list .header p {
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'Lato';
+  font-weight: 900;
+  line-height: 40px;
+}
+@media (max-width: 992px) {
+  .index-list .header p {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+.index-list .header i {
+  color: var(--primary);
+  margin-left: 10px;
+}
+@media (min-width: 992px) {
+  .index-list .header i {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .index-list {
+    position: sticky;
+    top: 50px;
+    z-index: 99;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: var(--secondary);
+  }
+}
+.index-list #list {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.index-list .list li {
+@media (max-width: 992px) {
+  .index-list #list {
+    display: none;
+    background-color: var(--secondary);
+  }
+}
+.index-list #list li {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.index-list .list a {
+.index-list #list a {
   color: black;
   font-size: 16px;
   padding: 5px 0;
 }
-.index-list .list a:hover {
+.index-list #list a:hover {
   color: var(--primary);
   text-decoration: none;
 }

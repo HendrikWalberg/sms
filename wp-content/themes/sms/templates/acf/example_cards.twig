@@ -4,6 +4,7 @@
             {% for card in fields.cards %}
                 <div class="card col-xl-3 col-lg-5 col-sm-12">
                     {{ card.text }}
+                    <a rel="nofollow" target="_blank" href={{card.card_url}} class="primary-button"><span class="text">Ansök nu</span></a>
                 </div>
             {% endfor %}
         </row>

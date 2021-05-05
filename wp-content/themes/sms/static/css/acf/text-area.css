@@ -12,6 +12,21 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.text-area .column.primary-divider hr {
+  background-color: var(--primary);
+}
+.text-area .column.highlight-1-divider hr {
+  background-color: var(--highlight-1);
+}
+.text-area .column.highlight-2-divider hr {
+  background-color: var(--highlight-2);
+}
+.text-area .column.highlight-3-divider hr {
+  background-color: var(--highlight-3);
+}
+.text-area .column.highlight-4-divider hr {
+  background-color: var(--highlight-4);
+}
 .text-area .column.image-column {
   justify-content: center;
   align-items: center;
@@ -50,7 +65,6 @@
 .text-area .column .text hr {
   width: 10%;
   height: 5px;
-  background-color: var(--highlight-2);
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 15px;

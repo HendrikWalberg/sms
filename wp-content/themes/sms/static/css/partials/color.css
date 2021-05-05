@@ -1,8 +1,10 @@
 :root {
   --primary: #1780cf;
   --secondary: #ebe8e8;
-  --highlight-1: #6BBF59;
-  --highlight-2: #FAEF59;
+  --highlight-1: #5AE4A7;
+  --highlight-2: #FF735C;
+  --highlight-3: #B35AAE;
+  --highlight-4: #FFC801;
   --supplementary: #FFFFF3;
 }
 .background--white {

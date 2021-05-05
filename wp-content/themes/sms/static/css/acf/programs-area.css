@@ -1,5 +1,7 @@
 .programs-area {
   font-family: 'Lato';
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .programs-area .filter-area {
   padding-bottom: 20px;
@@ -57,6 +59,7 @@
 .programs-area .filter-area .filter-interface .filter-choises .filter-choice {
   font-size: 18px;
   margin-right: 20px;
+  word-break: break-all;
 }
 .programs-area .filter-area .filter-interface .filter-choises .filter-choice input {
   margin-right: 10px;

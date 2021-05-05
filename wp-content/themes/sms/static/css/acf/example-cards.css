@@ -3,22 +3,20 @@
   font-family: 'Lato';
 }
 .example-cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   color: black;
   margin: 10px!important;
 }
+.example-cards .card .primary-button {
+  width: 100%;
+  text-align: center;
+}
 .example-cards .card p {
   font-size: 16px!important;
-}
-.example-cards .card a:before {
-  content: "\f0da";
-  font-family: Font Awesome\ 5 Free Solid;
-  margin-right: 10px;
-  font-size: 20px;
-}
-.example-cards .card a:hover {
-  text-decoration: none;
 }
 .example-cards .card ul {
   list-style: none;

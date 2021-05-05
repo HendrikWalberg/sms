@@ -24,24 +24,37 @@
   color: var(--primary);
   text-decoration: none;
 }
+.site-footer .widget-title {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
 .site-footer .copyright {
   text-align: center;
   background-color: #3c3c3c;
-  padding: 5px 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
   margin-top: 40px;
 }
 .site-footer .copyright p {
   margin-bottom: 0;
   color: #9c9c9c;
-  font-size: 14px;
+  font-size: 14px!important;
 }
-.site-footer .copyright a {
+.site-footer .copyright p span {
+  display: inline-block;
+}
+.site-footer .copyright p i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.site-footer .copyright p a {
   color: #9c9c9c;
+  margin-left: 10px;
+  display: inline-block;
 }
-.site-footer .copyright a:hover {
+.site-footer .copyright p a:hover {
   text-decoration: none;
   color: #9c9c9c;
-}
-.site-footer .copyright i {
-  margin: 0 10px;
 }
