@@ -14,6 +14,7 @@ $(document).ready(function() {
 		}
 
 		if($(window).width() > 992) {
+			$('.nav-main-item').unbind();
 			$('.nav-main-item').hover(function() {
 				$(this).children('.nav-drop').stop().fadeToggle(200);
 				$(this).find('i').toggleClass('fas fa-angle-down fa-lg');

@@ -3,14 +3,14 @@ $(document).ready(function() {
 	var i = 0;
 
 	$('.index_list_el').each(function() {
-		$(this).attr('id', i);
+		$(this).attr('id', `index-${i}`);
 		headings[i] = $(this).text();
 		i++;
 	})
 
 	$.each(headings, function(index, val) {
 		$('.index-list #list').append(`
-			<li class="col-lg-5 col-sm-12"><a href="#${index}">${val}</a></li>
+			<li class="col-lg-5 col-sm-12"><a href="#index-${index}">${val}</a></li>
 		`);
 	})
 

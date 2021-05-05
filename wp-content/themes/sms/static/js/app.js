@@ -1,5 +1,5 @@
 const $ = jQuery;
-
+/*
 $(document).ready(function() {
 	questionToggle()
 	indexList()
@@ -267,14 +267,14 @@ function indexList()
 	var i = 0;
 
 	$('.index_list_el').each(function() {
-		$(this).attr('id', i);
+		$(this).attr('id', `index-${i}`);
 		headings[i] = $(this).text();
 		i++;
 	})
 
 	$.each(headings, function(index, val) {
 		$('.index-list #list').append(`
-			<li class="col-lg-5 col-sm-12"><a href="#${index}">${val}</a></li>
+			<li class="col-lg-5 col-sm-12"><a href="#index-${index}">${val}</a></li>
 		`);
 	})
 
@@ -348,7 +348,6 @@ function siteHeader()
 		$('.logo').slideToggle(0);
 		$('.index-list').slideToggle(0);
 	});
-
 }
 
 function smoothScroll() {
@@ -362,3 +361,4 @@ function smoothScroll() {
 		  },1000)
 	})
 }
+*/
