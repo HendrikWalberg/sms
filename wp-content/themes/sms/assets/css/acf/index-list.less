@@ -9,6 +9,7 @@
     .header {
         
         @media(max-width: 992px) {
+            display: flex;
             cursor: pointer;
             justify-content: center;
         }
@@ -23,12 +24,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: none;
+            outline: none;
+            background-color: var(--secondary);
+            transition: all 0.3s linear;
 
             @media(min-width: 993px) {
                 display: none;
             }
 
             i {
+                display: inline-block;
                 color: var(--primary);
                 margin-left: 10px;
     

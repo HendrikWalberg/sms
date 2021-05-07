@@ -2,26 +2,22 @@
 .hero {
   display: flex;
   justify-content: center;
-  position: relative;
   min-width: 100%;
+  overflow: hidden;
   min-height: 0px;
-  padding-top: 455px;
+  max-height: 60vh;
 }
 .hero img {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
-  overflow: hidden;
   filter: blur(5px);
+  transform: scale(1.1);
 }
 .text-area {
   position: relative;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
   font-family: 'Lato';
 }
 .text-area .row-reverse {
@@ -30,34 +26,53 @@
 .text-area .column {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  justify-content: center;
 }
 .text-area .column.primary-divider hr {
   background-color: var(--primary);
 }
+.text-area .column.primary-divider li:before {
+  color: var(--primary);
+}
 .text-area .column.highlight-1-divider hr {
   background-color: var(--highlight-1);
+}
+.text-area .column.highlight-1-divider li:before {
+  color: var(--highlight-1);
 }
 .text-area .column.highlight-2-divider hr {
   background-color: var(--highlight-2);
 }
+.text-area .column.highlight-2-divider li:before {
+  color: var(--highlight-2);
+}
 .text-area .column.highlight-3-divider hr {
   background-color: var(--highlight-3);
 }
+.text-area .column.highlight-3-divider li:before {
+  color: var(--highlight-3);
+}
 .text-area .column.highlight-4-divider hr {
   background-color: var(--highlight-4);
+}
+.text-area .column.highlight-4-divider li:before {
+  color: var(--highlight-4);
 }
 .text-area .column.image-column {
   justify-content: center;
   align-items: center;
 }
-.text-area .column .image {
+.text-area .column.image-column .image {
   position: relative;
   width: 100%;
   padding-top: 90%;
 }
-.text-area .column .image img {
+@media (max-width: 768px) {
+  .text-area .column.image-column .image {
+    padding-top: 50%;
+  }
+}
+.text-area .column.image-column .image img {
   position: absolute;
   left: 0;
   right: 0;
@@ -102,7 +117,6 @@
 }
 .text-area .column .text ul li:before {
   content: '✓';
-  color: var(--primary);
   font-size: 40px;
   margin-right: 10px;
 }
@@ -154,6 +168,7 @@
 }
 @media (max-width: 992px) {
   .index-list .header {
+    display: flex;
     cursor: pointer;
     justify-content: center;
   }
@@ -167,6 +182,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  outline: none;
+  background-color: var(--secondary);
+  transition: all 0.3s linear;
 }
 @media (min-width: 993px) {
   .index-list .header .mobile-title {
@@ -174,6 +193,7 @@
   }
 }
 .index-list .header .mobile-title i {
+  display: inline-block;
   color: var(--primary);
   margin-left: 10px;
 }
@@ -332,16 +352,6 @@
   font-weight: 300;
   border-radius: 8px;
 }
-@media (max-width: 992px) {
-  .floating-box .floating-text {
-    margin-top: -40%;
-  }
-}
-@media (max-width: 400px) {
-  .floating-box .floating-text {
-    margin-top: -60%;
-  }
-}
 .floating-box .floating-text hr {
   width: 50%;
   height: 5px;
@@ -355,9 +365,6 @@
 }
 .floating-box .floating-text .text-container h1 {
   margin-bottom: 20px!important;
-}
-.floating-box .floating-text .text-container p {
-  font-size: 16px!important;
 }
 .floating-box .right {
   display: flex;
@@ -375,8 +382,13 @@
   background-color: white;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  height: 100%;
+  max-height: 500px;
   max-width: 500px;
+}
+@media (max-width: 576px) {
+  .floating-box .right .card {
+    max-height: 100%;
+  }
 }
 .floating-box .right .card .top-area {
   display: flex;
@@ -880,7 +892,7 @@ p {
   color: white;
 }
 .site-footer ul li a:hover {
-  color: var(--primary);
+  color: #4398d9;
   text-decoration: none;
 }
 .site-footer .widget-title {
@@ -890,10 +902,10 @@ p {
   font-size: 20px;
 }
 .site-footer .copyright {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #3c3c3c;
-  padding-top: 10px;
-  padding-bottom: 5px;
   margin-top: 40px;
 }
 .site-footer .copyright p {
@@ -914,11 +926,10 @@ p {
   display: inline-block;
 }
 .site-footer .copyright p a:hover {
-  text-decoration: none;
   color: #9c9c9c;
 }
 #sub-header {
-  background-color: #6479af;
+  background-color: #33668d;
   position: fixed;
   text-align: center;
   top: 0;
@@ -942,7 +953,6 @@ p {
   font-style: italic;
 }
 #sub-header p a:hover {
-  text-decoration: none;
   color: white;
 }
 @media (max-width: 992px) {
@@ -1121,11 +1131,21 @@ p {
   justify-content: center;
   position: relative;
   height: 100%;
-  padding: 10px;
-  padding-bottom: 12px;
   margin: 1px;
   transition: color 0.1s;
   border-bottom: 1px solid transparent;
+}
+#site-header .nav-menu .nav-main .nav-main-item .nav-main-link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  #site-header .nav-menu .nav-main .nav-main-item .nav-main-link {
+    padding: 20px;
+    padding-right: 0;
+  }
 }
 #site-header .nav-menu .nav-main .nav-main-item:hover {
   color: var(--highlight-4);
@@ -1140,12 +1160,11 @@ p {
 }
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item {
-    justify-content: space-between;
+    flex-direction: column;
     height: auto;
     width: 100%;
     color: black;
     border-bottom: 1px solid #d3d3d3;
-    padding: 20px;
   }
   #site-header .nav-menu .nav-main .nav-main-item:hover {
     color: var(--primary);
@@ -1181,6 +1200,7 @@ p {
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item i {
     color: black;
+    margin-right: 10px;
   }
 }
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop {
@@ -1199,8 +1219,8 @@ p {
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop:before {
   content: "";
   position: absolute;
-  right: 47%;
-  top: -10px;
+  left: 45%;
+  bottom: 100%;
   width: 0;
   height: 0;
   border-style: solid;
@@ -1210,10 +1230,10 @@ p {
 }
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item .nav-drop {
+    position: relative;
     background-color: var(--primary);
     left: 0%;
     padding-left: 20px;
-    display: none;
     width: 100%;
     border-radius: 0;
     box-shadow: none;

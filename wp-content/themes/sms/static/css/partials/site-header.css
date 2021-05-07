@@ -1,5 +1,5 @@
 #sub-header {
-  background-color: #6479af;
+  background-color: #33668d;
   position: fixed;
   text-align: center;
   top: 0;
@@ -23,7 +23,6 @@
   font-style: italic;
 }
 #sub-header p a:hover {
-  text-decoration: none;
   color: white;
 }
 @media (max-width: 992px) {
@@ -202,11 +201,21 @@
   justify-content: center;
   position: relative;
   height: 100%;
-  padding: 10px;
-  padding-bottom: 12px;
   margin: 1px;
   transition: color 0.1s;
   border-bottom: 1px solid transparent;
+}
+#site-header .nav-menu .nav-main .nav-main-item .nav-main-link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  #site-header .nav-menu .nav-main .nav-main-item .nav-main-link {
+    padding: 20px;
+    padding-right: 0;
+  }
 }
 #site-header .nav-menu .nav-main .nav-main-item:hover {
   color: var(--highlight-4);
@@ -226,7 +235,6 @@
     width: 100%;
     color: black;
     border-bottom: 1px solid #d3d3d3;
-    padding: 20px;
   }
   #site-header .nav-menu .nav-main .nav-main-item:hover {
     color: var(--primary);
@@ -262,6 +270,7 @@
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item i {
     color: black;
+    margin-right: 10px;
   }
 }
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop {

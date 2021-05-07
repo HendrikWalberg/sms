@@ -21,7 +21,7 @@
   color: white;
 }
 .site-footer ul li a:hover {
-  color: var(--primary);
+  color: #4398d9;
   text-decoration: none;
 }
 .site-footer .widget-title {
@@ -31,10 +31,10 @@
   font-size: 20px;
 }
 .site-footer .copyright {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #3c3c3c;
-  padding-top: 10px;
-  padding-bottom: 5px;
   margin-top: 40px;
 }
 .site-footer .copyright p {
@@ -55,6 +55,5 @@
   display: inline-block;
 }
 .site-footer .copyright p a:hover {
-  text-decoration: none;
   color: #9c9c9c;
 }

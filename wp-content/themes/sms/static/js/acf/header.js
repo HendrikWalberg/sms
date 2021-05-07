@@ -13,17 +13,25 @@ $(document).ready(function() {
 			$('#site-header').css('top', '20px');
 		}
 
+		if($('.nav-drop').css('display') == 'none') {
+			$('.nav-main-item').find('i').removeClass('fas fa-angle-up fa-lg')
+			$('.nav-main-item').find('i').addClass('fas fa-angle-down fa-lg')			
+		}
+
 		if($(window).width() > 992) {
+			$('.nav-drop').removeAttr("style");
 			$('.nav-main-item').unbind();
+			$(this).children('.nav-drop').css('');
 			$('.nav-main-item').hover(function() {
-				$(this).children('.nav-drop').stop().fadeToggle(200);
+				$(this).children('.nav-drop').stop().slideToggle(200);
 				$(this).find('i').toggleClass('fas fa-angle-down fa-lg');
 				$(this).find('i').toggleClass('fas fa-angle-up fa-lg');
 			});
 		} else {
+			$('.nav-drop').removeAttr("style");
 			$('.nav-main-item').unbind();
 			$('.nav-main-item').click(function() {
-				$(this).children('.nav-drop').stop().fadeToggle(200);
+				$(this).children('.nav-drop').stop().slideToggle(200);
 				$(this).find('i').toggleClass('fas fa-angle-down fa-lg');
 				$(this).find('i').toggleClass('fas fa-angle-up fa-lg');
 			});

@@ -27,9 +27,9 @@ $(document).ready(function() {
 	function checkIndex()
 	{
 		if($(window).outerWidth() > 992) {
-			$('.index-list #list').attr('style', '');
-			$('.header').find('i').toggleClass('fas fa-angle-down fa-2x');
-			$('.header').find('i').toggleClass('fas fa-angle-up fa-2x');
+			$('.index-list #list').removeAttr('style');
+			$('.header').find('i').removeClass('fas fa-angle-up fa-2x');
+			$('.header').find('i').addClass('fas fa-angle-down fa-2x');
 		}
 	}
 });

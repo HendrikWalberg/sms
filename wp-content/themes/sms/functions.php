@@ -185,6 +185,7 @@ function tbs_enqueue_scripts()
 	wp_enqueue_script('tbs-app', get_template_directory_uri() . '/static/js/app.js', ['jquery'], '0.0.1');
 	
 	wp_enqueue_script('tbs-header', get_template_directory_uri() . '/static/js/acf/header.js', ['jquery'], '0.0.2');
+	wp_enqueue_script('tbs-faq', get_template_directory_uri() . '/static/js/acf/faq.js', ['jquery'], '0.0.2');
 	wp_enqueue_script('tbs-index-list', get_template_directory_uri() . '/static/js/acf/index_list.js', ['jquery'], '0.0.2');
 	wp_enqueue_script('tbs-program-render', get_template_directory_uri() . '/static/js/acf/program_render.js', ['jquery'], '0.0.2');
 	wp_enqueue_script('tbs-smooth-scroll', get_template_directory_uri() . '/static/js/partials/smooth_scroll.js', ['jquery'], '0.0.2');

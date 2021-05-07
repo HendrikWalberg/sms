@@ -31,12 +31,17 @@
   justify-content: center;
   align-items: center;
 }
-.text-area .column .image {
+.text-area .column.image-column .image {
   position: relative;
   width: 100%;
   padding-top: 90%;
 }
-.text-area .column .image img {
+@media (max-width: 768px) {
+  .text-area .column.image-column .image {
+    padding-top: 50%;
+  }
+}
+.text-area .column.image-column .image img {
   position: absolute;
   left: 0;
   right: 0;

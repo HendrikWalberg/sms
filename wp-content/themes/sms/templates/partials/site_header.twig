@@ -22,11 +22,10 @@
                         <li class="nav-main-item {{ dropdown }} {{ item.classes|join(' ') }}">
                             {% if item.children %}
                                 {% if item.link %}
-                                    <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}</a>
+                                    <a class="nav-main-link h5" href="{{ item.link }}">{{ item.title }}<i class="fas fa-angle-down fa-lg"></i></a>
                                 {% else %}
-                                    <p class="nav-main-link h5">{{ item.title }}</p>
+                                    <p class="nav-main-link h5">{{ item.title }}<i class="fas fa-angle-down fa-lg"></i></p>
                                 {% endif %}
-                                <i class="fas fa-angle-down fa-lg"></i>
                                 
                                 <ul class="nav-drop">
                                     {% for child in item.children %}

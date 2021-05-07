@@ -1,5 +1,5 @@
 #sub-header {
-    background-color: #6479af;
+    background-color: #33668d;
     position: fixed;
     text-align: center;
     top: 0; left: 0; right: 0;
@@ -22,7 +22,6 @@
             font-style: italic;
 
             &:hover {
-                text-decoration: none;
                 color: white;
             }
         }
@@ -200,11 +199,21 @@
                 justify-content: center;
                 position: relative;
                 height: 100%;
-                padding: 10px;
-                padding-bottom: 12px;
                 margin: 1px;
                 transition: color 0.1s;
                 border-bottom: 1px solid transparent;
+
+                .nav-main-link {
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
+                    padding: 10px;
+
+                    @media (max-width: 992px) {
+                        padding: 20px;
+                        padding-right: 0;
+                    }
+                }
 
                 &:hover {
                     color: var(--highlight-4);
@@ -221,12 +230,11 @@
                 }
 
                 @media (max-width: 992px) {
-                    justify-content: space-between;
+                    flex-direction: column;
                     height: auto;
                     width: 100%;
                     color: black;
                     border-bottom: 1px solid #d3d3d3;
-                    padding: 20px;
 
                     &:hover {
                         color: var(--primary);
@@ -266,6 +274,7 @@
 
                     @media(max-width: 992px) {
                         color: black;
+                        margin-right: 10px;
                     }    
                 }
 
@@ -285,8 +294,8 @@
                     &:before {
                         content:"";
                         position: absolute;
-                        right: 47%;
-                        top: -10px;
+                        left: 45%;
+                        bottom: 100%;
                         width: 0;
                         height: 0;
                         border-style: solid;
@@ -296,10 +305,10 @@
                     }
 
                     @media(max-width: 992px) {
+                        position: relative;
                         background-color: var(--primary);
                         left: 0%;
                         padding-left: 20px;
-                        display: none;
                         width: 100%;
                         border-radius: 0;
                         box-shadow: none;

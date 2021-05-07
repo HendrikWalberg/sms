@@ -59,6 +59,35 @@ $(document).ready(function() {
 				var bankToken = `<i class="fas fa-question"></i>`;
 			};
 
+			if(val.ansok_med_bankid === null) {
+				var bankToken = `<i class="fas fa-question"></i>`;
+			};
+
+			if(val.laneskydd_kan_tecknas === "1") {
+				var insuranceToken = `<i class="fas fa-check"></i> Ja`;
+			};
+
+			if(val.laneskydd_kan_tecknas === "0") {
+				var insuranceToken = `<i class="fas fa-times"></i> Nej`;
+			};
+
+			if(val.laneskydd_kan_tecknas === null) {
+				var insuranceToken = `<i class="fas fa-question"></i>`;
+			};
+
+			if(val.direktutbetalning === "1") {
+				var directToken = `<i class="fas fa-check"></i> Ja`;
+			};
+
+			if(val.direktutbetalning === "0") {
+				var directToken = `<i class="fas fa-times"></i> Nej`;
+			};
+
+			if(val.direktutbetalning === null) {
+				var directToken = `<i class="fas fa-question"></i>`;
+			};
+
+
 			$('.programs-area .programs').append(`
 				<div class="program ${programClass === "hide" ? "hide" : ""} col-xl-12 col-lg-5 col-11 m-1">
 					<div class="program-upper row m-1">
@@ -108,7 +137,7 @@ $(document).ready(function() {
 								<div class="feature-name col-sm-6 col-12">Ansök utan UC:</div> 
 								
 								<div class="feature-value col-sm-6 col-12">
-									${val.ansok_utan_uc === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${ucToken}
 								</div>
 							</li>
 
@@ -156,7 +185,7 @@ $(document).ready(function() {
 								<div class="feature-name col-sm-6 col-12">Låneskydd kan tecknas:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.laneskydd_kan_tecknas === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${insuranceToken}
 								</div>
 							</li>
 							
@@ -164,7 +193,7 @@ $(document).ready(function() {
 								<div class="feature-name col-sm-6 col-12">Direkt utbetalning:</div>
 								
 								<div class="feature-value col-sm-6 col-12"> 
-									${val.direktutbetalning === "1" ? `<i class="fas fa-check"></i> Ja` : `<i class="fas fa-times"></i> Nej`}
+									${directToken}
 								</div>
 							</li>
 

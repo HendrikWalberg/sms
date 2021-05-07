@@ -1,6 +1,7 @@
 .text-area {
     position: relative;
-	padding: 40px 0;
+	padding-top: 40px;
+    padding-bottom: 40px;
     font-family: 'Lato';
 
     .row-reverse {
@@ -10,56 +11,85 @@
     .column {
         display: flex;
         flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        justify-content: center;
 
         &.primary-divider {
+            
             hr {
                 background-color: var(--primary);
+            }
+
+            li:before {
+                color: var(--primary);
             }
         }
         
         &.highlight-1-divider {
+            
             hr {
                 background-color: var(--highlight-1);
+            }
+
+            li:before {
+                color: var(--highlight-1);
             }
         }
         
         &.highlight-2-divider {
+            
             hr {
                 background-color: var(--highlight-2);
+            }
+
+            li:before {
+                color: var(--highlight-2);
             }
         }
         
         &.highlight-3-divider {
+            
             hr {
                 background-color: var(--highlight-3);
+            }
+
+            li:before {
+                color: var(--highlight-3);
             }
         }
         
         &.highlight-4-divider {
+            
             hr {
                 background-color: var(--highlight-4);
+            }
+
+
+            li:before {
+                color: var(--highlight-4);
             }
         }
 
         &.image-column {
             justify-content: center;
             align-items: center;
-        }
+            
+            .image {
+                position: relative;
+                width: 100%;
+                padding-top: 90%;
 
-        .image {
-            position: relative;
-            width: 100%;
-            padding-top: 90%;
-
-            img {
-                position: absolute;
-                left: 0; right: 0; top: 0; bottom: 0;
-                height: 100%;
-                width: 100%;        
-                margin: auto;
-                object-fit: contain;
+                @media(max-width: 768px) {
+                    padding-top: 50%;
+                }
+    
+                img {
+                    position: absolute;
+                    left: 0; right: 0; top: 0; bottom: 0;
+                    height: 100%;
+                    width: 100%;        
+                    margin: auto;
+                    object-fit: contain;
+                }
             }
         }
 
@@ -101,7 +131,6 @@
 
                     &:before {
                         content: '✓';
-                        color: var(--primary);
                         font-size: 40px;
                         margin-right: 10px;
                     }
