@@ -199,9 +199,9 @@
                 justify-content: center;
                 position: relative;
                 height: 100%;
-                margin: 1px;
+                padding-bottom: 3px;
                 transition: color 0.1s;
-                border-bottom: 1px solid transparent;
+                border-bottom: 2px solid transparent;
 
                 .nav-main-link {
                     display: inline-block;
@@ -217,16 +217,11 @@
 
                 &:hover {
                     color: var(--highlight-4);
-                    border-bottom: 1px solid var(--highlight-4);
+                    border-bottom: 2px solid var(--highlight-4);
 
                     i {
                         color: var(--highlight-4)!important;
                     }
-                }
-
-                &.menu-item-has-children {
-                    border-bottom: 1px solid transparent;
-                    cursor: pointer;
                 }
 
                 @media (max-width: 992px) {
@@ -234,11 +229,12 @@
                     height: auto;
                     width: 100%;
                     color: black;
-                    border-bottom: 1px solid #d3d3d3;
+                    border-bottom: 2px solid #d3d3d3;
+                    padding-bottom: 0;
 
                     &:hover {
                         color: var(--primary);
-                        border-bottom: 1px solid var(--primary);
+                        border-bottom: 2px solid var(--primary);
     
                         i {
                             color: var(--primary)!important;

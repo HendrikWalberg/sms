@@ -231,7 +231,6 @@
 }
 .index-list #list {
   width: 100%;
-  display: flex;
   justify-content: space-between;
 }
 @media (max-width: 992px) {
@@ -1131,9 +1130,9 @@ p {
   justify-content: center;
   position: relative;
   height: 100%;
-  margin: 1px;
+  padding-bottom: 3px;
   transition: color 0.1s;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 #site-header .nav-menu .nav-main .nav-main-item .nav-main-link {
   display: inline-block;
@@ -1149,14 +1148,10 @@ p {
 }
 #site-header .nav-menu .nav-main .nav-main-item:hover {
   color: var(--highlight-4);
-  border-bottom: 1px solid var(--highlight-4);
+  border-bottom: 2px solid var(--highlight-4);
 }
 #site-header .nav-menu .nav-main .nav-main-item:hover i {
   color: var(--highlight-4) !important;
-}
-#site-header .nav-menu .nav-main .nav-main-item.menu-item-has-children {
-  border-bottom: 1px solid transparent;
-  cursor: pointer;
 }
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item {
@@ -1164,11 +1159,12 @@ p {
     height: auto;
     width: 100%;
     color: black;
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: 2px solid #d3d3d3;
+    padding-bottom: 0;
   }
   #site-header .nav-menu .nav-main .nav-main-item:hover {
     color: var(--primary);
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
   }
   #site-header .nav-menu .nav-main .nav-main-item:hover i {
     color: var(--primary) !important;

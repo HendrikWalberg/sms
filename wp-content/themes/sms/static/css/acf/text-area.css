@@ -1,6 +1,7 @@
 .text-area {
   position: relative;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
   font-family: 'Lato';
 }
 .text-area .row-reverse {
@@ -9,23 +10,37 @@
 .text-area .column {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  justify-content: center;
 }
 .text-area .column.primary-divider hr {
   background-color: var(--primary);
 }
+.text-area .column.primary-divider li:before {
+  color: var(--primary);
+}
 .text-area .column.highlight-1-divider hr {
   background-color: var(--highlight-1);
+}
+.text-area .column.highlight-1-divider li:before {
+  color: var(--highlight-1);
 }
 .text-area .column.highlight-2-divider hr {
   background-color: var(--highlight-2);
 }
+.text-area .column.highlight-2-divider li:before {
+  color: var(--highlight-2);
+}
 .text-area .column.highlight-3-divider hr {
   background-color: var(--highlight-3);
 }
+.text-area .column.highlight-3-divider li:before {
+  color: var(--highlight-3);
+}
 .text-area .column.highlight-4-divider hr {
   background-color: var(--highlight-4);
+}
+.text-area .column.highlight-4-divider li:before {
+  color: var(--highlight-4);
 }
 .text-area .column.image-column {
   justify-content: center;
@@ -86,7 +101,6 @@
 }
 .text-area .column .text ul li:before {
   content: '✓';
-  color: var(--primary);
   font-size: 40px;
   margin-right: 10px;
 }

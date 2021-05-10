@@ -230,7 +230,7 @@
 }
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item {
-    justify-content: space-between;
+    flex-direction: column;
     height: auto;
     width: 100%;
     color: black;
@@ -289,8 +289,8 @@
 #site-header .nav-menu .nav-main .nav-main-item .nav-drop:before {
   content: "";
   position: absolute;
-  right: 47%;
-  top: -10px;
+  left: 45%;
+  bottom: 100%;
   width: 0;
   height: 0;
   border-style: solid;
@@ -300,10 +300,10 @@
 }
 @media (max-width: 992px) {
   #site-header .nav-menu .nav-main .nav-main-item .nav-drop {
+    position: relative;
     background-color: var(--primary);
     left: 0%;
     padding-left: 20px;
-    display: none;
     width: 100%;
     border-radius: 0;
     box-shadow: none;

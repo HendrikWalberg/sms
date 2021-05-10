@@ -30,9 +30,6 @@
 .floating-box .floating-text .text-container h1 {
   margin-bottom: 20px!important;
 }
-.floating-box .floating-text .text-container p {
-  font-size: 16px!important;
-}
 .floating-box .right {
   display: flex;
   justify-content: center;
@@ -49,8 +46,13 @@
   background-color: white;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  height: 100%;
+  max-height: 500px;
   max-width: 500px;
+}
+@media (max-width: 576px) {
+  .floating-box .right .card {
+    max-height: 100%;
+  }
 }
 .floating-box .right .card .top-area {
   display: flex;
