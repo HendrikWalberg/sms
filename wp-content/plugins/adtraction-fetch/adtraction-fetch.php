@@ -13,13 +13,13 @@ function tbs_activation()
     $table_name = $wpdb->prefix . 'tbsprograms';
 
     $sql = "CREATE TABLE $table_name (
-        programName VARCHAR(255) UNIQUE,
-        programId INT(9),
-        programUrl VARCHAR(255),
+        programName VARCHAR(100) UNIQUE,
+        programId VARCHAR(9),
+        programUrl VARCHAR(100),
         market VARCHAR(2),
-        currency VARCHAR(255),
-        logoUrl VARCHAR(255),
-        trackingUrl VARCHAR(255),
+        currency VARCHAR(100),
+        logoUrl VARCHAR(100),
+        trackingUrl VARCHAR(100),
         minAmount FLOAT,
         maxAmount FLOAT,
         minDuration FLOAT,
@@ -33,7 +33,7 @@ function tbs_activation()
         adminFee FLOAT,
         startFee FLOAT,
         firstLoanFree BOOLEAN,
-        timeUnit VARCHAR(255),
+        timeUnit VARCHAR(100),
         acceptsRemarks BOOLEAN,
         loanExample TEXT,
         ansok_utan_uc BOOLEAN,

@@ -75,12 +75,11 @@
   margin-bottom: 0;
 }
 .text-area .column .text a {
-  color: currentColor;
+  color: var(--primary);
   cursor: pointer;
 }
 .text-area .column .text a:hover {
-  color: currentColor;
-  text-decoration: none!;
+  color: var(--primary);
 }
 .text-area .column .text hr {
   width: 10%;

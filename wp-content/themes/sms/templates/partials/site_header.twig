@@ -6,14 +6,14 @@
     <div class="container">
         <div class="row">
             <div class="logo col-lg-5 col-12">
-                <img src="{{ theme.link }}/static/img/logo.svg">
+                {{ fn('get_custom_logo') }}
                 <a href="/" class="logo-text">Sms lån som beviljar alla</a>
             </div>
 
             <nav class="nav-menu col-lg-6 col-12">
 
                 <div class="mobile-nav-logo col-12">
-                    <img src="{{ theme.link }}/static/img/logo.svg">
+                    {{ fn('get_custom_logo') }}
                     <p class="logo-text">Sms lån som beviljar alla</p>
                 </div>
 

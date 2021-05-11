@@ -1,5 +1,7 @@
 <?php
 
+require('lib/Misc.php');
+
 /**
  * Timber starter-theme
  * https://github.com/timber/starter-theme
@@ -97,6 +99,8 @@ class StarterSite extends Timber\Site {
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+		$custom_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' );
+     	$context['custom_logo_url'] = $custom_logo_url;
 		return $context;
 	}
 
@@ -147,9 +151,11 @@ class StarterSite extends Timber\Site {
 				'quote',
 				'link',
 				'gallery',
-				'audio',
+				'audio'
 			)
 		);
+
+		add_theme_support( 'custom-logo' );
 
 		add_theme_support( 'menus' );
 	}
@@ -180,15 +186,15 @@ new StarterSite();
 add_action('wp_enqueue_scripts', 'tbs_enqueue_scripts');
 function tbs_enqueue_scripts()
 {
-	wp_enqueue_style('tbs-app', get_template_directory_uri() . '/static/css/app.css', [], '0.0.4');
+	wp_enqueue_style('tbs-app', get_template_directory_uri() . '/static/css/app.css', [], '0.0.5');
 	
-	wp_enqueue_script('tbs-app', get_template_directory_uri() . '/static/js/app.js', ['jquery'], '0.0.1');
+	wp_enqueue_script('tbs-app', get_template_directory_uri() . '/static/js/app.js', ['jquery'], '0.0.2');
 	
-	wp_enqueue_script('tbs-header', get_template_directory_uri() . '/static/js/acf/header.js', ['jquery'], '0.0.2');
-	wp_enqueue_script('tbs-faq', get_template_directory_uri() . '/static/js/acf/faq.js', ['jquery'], '0.0.2');
-	wp_enqueue_script('tbs-index-list', get_template_directory_uri() . '/static/js/acf/index_list.js', ['jquery'], '0.0.2');
-	wp_enqueue_script('tbs-program-render', get_template_directory_uri() . '/static/js/acf/program_render.js', ['jquery'], '0.0.2');
-	wp_enqueue_script('tbs-smooth-scroll', get_template_directory_uri() . '/static/js/partials/smooth_scroll.js', ['jquery'], '0.0.2');
+	wp_enqueue_script('tbs-header', get_template_directory_uri() . '/static/js/acf/header.js', ['jquery'], '0.0.3');
+	wp_enqueue_script('tbs-faq', get_template_directory_uri() . '/static/js/acf/faq.js', ['jquery'], '0.0.3');
+	wp_enqueue_script('tbs-index-list', get_template_directory_uri() . '/static/js/acf/index_list.js', ['jquery'], '0.0.3');
+	wp_enqueue_script('tbs-program-render', get_template_directory_uri() . '/static/js/acf/program_render.js', ['jquery'], '0.0.3');
+	wp_enqueue_script('tbs-smooth-scroll', get_template_directory_uri() . '/static/js/partials/smooth_scroll.js', ['jquery'], '0.0.3');
 	
 	wp_enqueue_style('tbs-font-lato', get_template_directory_uri() . '/static/font/Lato/stylesheet.css');
 	

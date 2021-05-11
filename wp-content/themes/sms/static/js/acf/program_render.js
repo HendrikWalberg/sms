@@ -207,7 +207,7 @@ $(document).ready(function() {
 
 							<li class="row justify-content-center">
 								<div class="col-12">
-									<p class="warning">Du riskerar en betalningsanmärkning om du inte kan betala tillbaka hela skulden. Du kan vända dig till budget- och skuldrådgivaren i din kommun för stöd. Kontaktuppgifterna hittar du på <a href="http://www.hallakonsument.se">www.hallakonsument.se</a>.</p>
+									<p class="warning">Du riskerar en betalningsanmärkning om du inte kan betala tillbaka hela skulden. Du kan vända dig till budget- och skuldrådgivaren i din kommun för stöd. Kontaktuppgifterna hittar du på www.hallakonsument.se.</p>
 								</div>
 							</li>
 						</ul>
@@ -223,8 +223,11 @@ $(document).ready(function() {
 	function getAll() {
 		$('.programs-area .programs .program').remove();
 		$('.programs-area .programs .button-container').remove();
-		$.getJSON('http://sms/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
+		$('#uc').prop('checked', false);
+		$('#remark').prop('checked', false);
+		$.getJSON('/wp-json/adtraction-fetch/v1/get-all-programs', function( data ) {
 			htmlTemplate(data);
+			console.log(data);
 		});
 	}
 
@@ -261,7 +264,7 @@ $(document).ready(function() {
 			var remark = 0;
 		}
 
-		$.getJSON(`http://sms/wp-json/adtraction-fetch/v1/get-filter-programs?uc=${uc}&remark=${remark}`, function( data ) {
+		$.getJSON(`/wp-json/adtraction-fetch/v1/get-filter-programs?uc=${uc}&remark=${remark}`, function( data ) {
 			$('.programs-area .programs .program').remove();
 			$('.programs-area .programs .button-container').remove();
 

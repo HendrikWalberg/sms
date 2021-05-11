@@ -36,7 +36,7 @@ function tbs_adtraction_update()
     $url = "https://api.adtraction.com/v2/public/compare/paydayloans/";
 
     $body = [
-        "channelId" => 1230659788,
+        "channelId" => 1611686045,
         "currency" => "SEK",
         "market" => "SE"
     ];
