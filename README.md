@@ -3,15 +3,15 @@
 
 ####Table of contents
 
-[Logbook](#logbook)
-[Finance](#finance)
-[Requirements](#requirements)
-[Technical Stack](#technical)
-[API](#api)
-[API Rotes](#api-routes)
-[External API](#external-api)
-[Security](#security)
-[Design](#design)
+[Logbook](#logbook)<br>
+[Finance](#finance)<br>
+[Requirements](#requirements)<br>
+[Technical Stack](#technical)<br>
+[API](#api)<br>
+[API Rotes](#api-routes)<br>
+[External API](#external-api)<br>
+[Security](#security)<br>
+[Design](#design)<br>
 
 ##Logbook - SMS-Lån som beviljar alla <a name="logbook"></a>
 
