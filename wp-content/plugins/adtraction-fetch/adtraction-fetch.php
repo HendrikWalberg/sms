@@ -37,9 +37,10 @@ function tbs_activation()
         acceptsRemarks BOOLEAN,
         loanExample TEXT,
         ansok_utan_uc BOOLEAN,
-        ansok_med_bankid BOOLEAN, 
+        ansok_med_bankid BOOLEAN,
         laneskydd_kan_tecknas BOOLEAN,
         direktutbetalning BOOLEAN,
+        affiliate VARCHAR(100),
         PRIMARY KEY (programId)
     );";
 
@@ -48,7 +49,7 @@ function tbs_activation()
 
     /*** SCHEDULES DATABASE UPDATE TO RUN ONCE DAILY ***/
 
-    wp_schedule_event( time(), 'daily', 'tbs_update_hook' );      
+    wp_schedule_event( time(), 'daily', 'tbs_update_hook' );
 };
 
 add_action( 'tbs_update_hook',  'tbs_adtraction_update' );

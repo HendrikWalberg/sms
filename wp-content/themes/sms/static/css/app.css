@@ -1112,6 +1112,8 @@ p {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  zoom: 1;
   list-style: none;
   height: 100%;
   padding: 0;
@@ -1131,6 +1133,7 @@ p {
   align-items: center;
   justify-content: center;
   position: relative;
+  zoom: 1;
   height: 100%;
   padding-bottom: 3px;
   transition: color 0.1s;

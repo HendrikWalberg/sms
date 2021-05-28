@@ -27,9 +27,9 @@ $(document).ready(function() {
 		if($(window).width() > 992) {
 			$('.index-list').removeAttr("style");
 			$('.nav-main-item').unbind();
-			$(this).children('.nav-drop').css('');
+			$(this).children('.nav-drop').removeAttr("style");
 			$('.nav-main-item').hover(function() {
-				$(this).children('.nav-drop').stop().slideToggle(200);
+				$(this).children('.nav-drop').stop().fadeToggle(200);
 				$(this).find('i').toggleClass('fas fa-angle-down fa-lg');
 				$(this).find('i').toggleClass('fas fa-angle-up fa-lg');
 			});
@@ -37,7 +37,7 @@ $(document).ready(function() {
 			$('.nav-drop').removeAttr("style");
 			$('.nav-main-item').unbind();
 			$('.nav-main-item').click(function() {
-				$(this).children('.nav-drop').stop().slideToggle(200);
+				$(this).children('.nav-drop').stop().fadeToggle(200);
 				$(this).find('i').toggleClass('fas fa-angle-down fa-lg');
 				$(this).find('i').toggleClass('fas fa-angle-up fa-lg');
 			});
