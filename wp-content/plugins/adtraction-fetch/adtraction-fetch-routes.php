@@ -29,7 +29,7 @@ add_action('rest_api_init', function() {
 
 /* UPDATES DATABASE WITH NEW DATA */
 
-function tbs_adtraction_update() 
+function tbs_adtraction_update()
 {
     global $wpdb;
 
@@ -51,15 +51,17 @@ function tbs_adtraction_update()
     ];
 
     $response = wp_remote_post($url, $options);
-    
+
     $table_name = $wpdb->prefix . 'tbsprograms';
+
+    $wpdb->query('TRUNCATE TABLE ' . $table_name);
 
     $programs = json_decode($response["body"], true);
 
     foreach ($programs as $key => $program)
     {
         $final = tbs_include_unincluded_data($program);
-      
+
         $experiment = $wpdb->replace($table_name, $final);
     };
 }
@@ -113,7 +115,7 @@ function tbs_return_filtered_programs( $data )
     $results = $wpdb->get_results($query);
 
     $programs = json_decode(json_encode($results), true);
-    
+
     return $programs;
 }
 
@@ -125,154 +127,183 @@ function tbs_include_unincluded_data($program)
     {
         case "Brixo":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = true;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1091548601&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Cashbuddy SE":
             $program["ansok_utan_uc"] = false;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=368423649&as=1230659788&t=2&tk=1";
             break;
 
         case "Daypay":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1065957440&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Everydayplus SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1517452588&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Expresskredit":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=56815250&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Ferratum SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=679911485&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Flexkontot SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1177156373&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "GF Money SE":
             $program["ansok_utan_uc"] = false;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1400909618&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Kontantfinans":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1080729337&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Kredit 365":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=24257802&as=1230659788&t=2&tk=1";
             break;
-        
-        case "Kundfinans": 
+
+        case "Kundfinans":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=44108850&as=1230659788&t=2&tk=1";
             break;
-        
-        case "Loanstep": 
+
+        case "Loanstep":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1082866297&as=1230659788&t=2&tk=1";
             break;
-        
-        case "Lumify": 
+
+        case "Lumify":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1278835897&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Merax SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1184128142&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Mobillån SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=285859820&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Monetti SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=23696960&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Northmill SE":
             $program["ansok_utan_uc"] = false;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = true;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1105916291&as=1230659788&t=2&tk=1";
             break;
-        
+
         case "Slantar":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1206899685&as=1230659788&t=2&tk=1";
             break;
-        
-        case "SMSPengar": 
+
+        case "SMSPengar":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=56814276&as=1230659788&t=2&tk=1";
             break;
-        
-        case "Tryggkredit": 
+
+        case "Tryggkredit":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = false;
-            $program["direktutbetalning"] = false;           
+            $program["direktutbetalning"] = false;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1156145509&as=1230659788&t=2&tk=1";
             break;
 
         case "ViaConto SE":
             $program["ansok_utan_uc"] = true;
-            $program["ansok_med_bankid"] = true; 
+            $program["ansok_med_bankid"] = true;
             $program["laneskydd_kan_tecknas"] = true;
-            $program["direktutbetalning"] = true;           
+            $program["direktutbetalning"] = true;
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=485150298&as=1230659788&t=2&tk=1";
             break;
-        
+
+        case "Klicklån SE":
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1061611421&as=1230659788&t=2&tk=1";
+            break;
+
+        case "Viiga Lån SE":
+            $program["affiliate"] = "https://track.adtraction.com/t/t?a=1477774333&as=1230659788&t=2&tk=1";
+            break;
+
         default:
-            echo "Problem with value injection loop";     
+            echo "Problem with value injection loop";
     }
-    
+
     return $program;
 }

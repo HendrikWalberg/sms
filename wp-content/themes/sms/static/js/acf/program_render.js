@@ -40,7 +40,7 @@ $(document).ready(function() {
 			if(index > 3) {
 				var programClass = "hide";
 			}
-			
+
 			if(val.maxInterest === val.minInterest) {
 				var interest = val.maxInterest
 			} else {
@@ -94,17 +94,17 @@ $(document).ready(function() {
 						<div class="image-container col-xl-2 col-10">
 							<img src=${val.logoUrl}>
 						</div>
-						
+
 						<div class="feature col-xl-3 col-lg-10">
 							<p class="subtitle">Lånebelopp</p>
 							<p>${val.minAmount} - ${val.maxAmount} kr</p>
 						</div>
-						
+
 						<div class="feature col-xl-2 col-lg-10">
 							<p class="subtitle">Ränta</p>
 							<p>${interest}%</p>
 						</div>
-						
+
 						<div class="feature col-xl-1 col-lg-10">
 							<p class="subtitle">Åldersgräns</p>
 							<p>${val.minAge}år</p>
@@ -112,30 +112,30 @@ $(document).ready(function() {
 
 						<div class="feature extra col-xl-2 col-lg-10">
 							<div class="col-xl-11 col-lg-6 p-0">
-								<p>Bet.anmärk OK:</p>	
+								<p>Bet.anmärk OK:</p>
 								<p>Utan UC:</p>
-							</div>	
+							</div>
 							<div class="col-xl-1 col-lg-1 p-0">
 								<p id="remark-token" class="token">${remarkToken}</p>
 								<p id="uc-token" class="token">${ucToken}</p>
 							</div>
-								
+
 						</div>
-						
+
 						<div class="col-xl-2 col-lg-10">
 							<div class="button-container col-12">
-								<a rel="nofollow" target="_blank" href=${val.programUrl} class="primary-button"><span class="text">Ansök nu</span></a>
+								<a rel="nofollow" target="_blank" href=${val.trackingUrl} class="primary-button"><span class="text">Ansök nu</span></a>
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="program-lower col-12">
 						<button class="more-information">Mer Information <i class="fas fa-angle-down fa-lg"></i></button>
 
 						<ul class="program-features">
 							<li class="row justify-content-center">
-								<div class="feature-name col-sm-6 col-12">Ansök utan UC:</div> 
-								
+								<div class="feature-name col-sm-6 col-12">Ansök utan UC:</div>
+
 								<div class="feature-value col-sm-6 col-12">
 									${ucToken}
 								</div>
@@ -143,64 +143,64 @@ $(document).ready(function() {
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Uppläggningsavgift:</div>
-							
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${val.startFee} kr
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Bet.anmärk OK:</div>
-							
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${remarkToken}
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Lånetid:</div>
-								
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${val.minDuration} - ${val.maxDuration} ${val.timeUnit}
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Expiditions Avgift:</div>
-								
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${val.adminFee} kr
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Ansök med bankId:</div>
-								
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${bankToken}
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Låneskydd kan tecknas:</div>
-								
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${insuranceToken}
 								</div>
 							</li>
-							
+
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Direkt utbetalning:</div>
-								
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									${directToken}
 								</div>
 							</li>
 
 							<li class="row justify-content-center">
 								<div class="feature-name col-sm-6 col-12">Exempel på lån:</div>
-									
-								<div class="feature-value col-sm-6 col-12"> 
+
+								<div class="feature-value col-sm-6 col-12">
 									<p class="example">${val.loanExample}</p>
 								</div>
 							</li>
@@ -217,7 +217,6 @@ $(document).ready(function() {
 			if($('.program').length > 3) {
 				$('.programs-area .programs').append(`<div class="button-container col-12"><button class="show-all primary-button"><span class="text">Visa Alla</span></button></div>`);
 			}
-		
 	};
 
 	function getAll() {
@@ -239,7 +238,7 @@ $(document).ready(function() {
 	$('.programs-area .filter-area .reset-button').on('click', getAll);
 
 	$(document).on('click', '.programs-area .programs .more-information', function() {
-		$(this).next('.program-features').slideToggle(500);		
+		$(this).next('.program-features').slideToggle(500);
 		$(this).html(($(this).html() == 'Mer Information <i class="fas fa-angle-down fa-lg"></i>') ? 'Visa Mindre <i class="fas fa-angle-up fa-lg"></i>' : 'Mer Information <i class="fas fa-angle-down fa-lg"></i>');		
 	});
 
@@ -250,7 +249,7 @@ $(document).ready(function() {
 
 	$(document).on('click', '.programs-area .filter-area .filter-button', function() {
 		var uc;
-		var remark;	
+		var remark;
 
 		if($('#uc').is(':checked')) {
 			var uc = 1;
